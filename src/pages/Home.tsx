@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { translations } from "../data/translations";
 import type { Language } from "../types/language";
+import { getInitialLang, persistLang } from "../lib/lang";
 import Navbar from "../components/home/NavBar";
 import Hero from "../components/home/Hero";
 import About from "../components/home/About";
@@ -17,7 +18,7 @@ import StudyingSection from "../components/home/Studying";
 
 export default function Home() {
   const [splashDone, setSplashDone] = useState(false);
-  const [lang, setLang] = useState<Language>("pt");
+  const [lang, setLang] = useState<Language>(getInitialLang);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -26,6 +27,10 @@ export default function Home() {
 
     return () => window.removeEventListener("scroll", handler);
   }, []);
+
+  useEffect(() => {
+    persistLang(lang);
+  }, [lang]);
 
   const t = translations[lang];
 
@@ -42,9 +47,9 @@ export default function Home() {
           <Hero t={t} />
           <About t={t} />
           <Projects t={t} />
-          <Process />
-          <Experience />
-          <StudyingSection />
+          <Process t={t} />
+          <Experience t={t} />
+          <StudyingSection t={t} />
           <Skills t={t} />
           <Contact t={t} />
         </main>

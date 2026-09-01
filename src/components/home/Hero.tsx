@@ -47,33 +47,6 @@ export default function Hero({ t }: HeroProps) {
         overflow: "hidden",
       }}
     >
-      <div
-        style={{
-          position: "absolute",
-          top: "20%",
-          left: "10%",
-          width: 300,
-          height: 300,
-          borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(124,58,237,0.12) 0%, transparent 70%)",
-          filter: "blur(40px)",
-          pointerEvents: "none",
-        }}
-      />
-
-      <div
-        style={{
-          position: "absolute",
-          bottom: "20%",
-          right: "10%",
-          width: 400,
-          height: 400,
-          borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(167,139,250,0.08) 0%, transparent 70%)",
-          filter: "blur(60px)",
-          pointerEvents: "none",
-        }}
-      />
       <div style={{ maxWidth: 800, textAlign: "center", position: "relative", zIndex: 1 }}>
         <div
           style={{
@@ -210,7 +183,29 @@ export default function Hero({ t }: HeroProps) {
             {t.hero.cta2}
           </button>
 
-
+          <a
+            href={t.hero.cvFile}
+            download
+            className="btn-secondary"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              background: "transparent",
+              border: "1px solid rgba(124,58,237,0.4)",
+              color: "#a78bfa",
+              padding: "14px 32px",
+              borderRadius: 50,
+              fontSize: 14,
+              fontFamily: "monospace",
+              letterSpacing: "0.1em",
+              cursor: "pointer",
+              textDecoration: "none",
+              transition: "all 0.3s ease",
+            }}
+          >
+            <span>⤓</span> {t.hero.downloadCV}
+          </a>
         </div>
 
         <div

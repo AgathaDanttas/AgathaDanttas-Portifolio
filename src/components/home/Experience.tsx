@@ -1,19 +1,17 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Folder, Puzzle, Tag, Smartphone, GitBranch, Eye } from "lucide-react";
+import type { Translation } from "../../types/translation";
 
-const items = [
-  { icon: Folder, label: "Organização de pastas" },
-  { icon: Puzzle, label: "Componentização" },
-  { icon: Tag, label: "Nomenclatura clara" },
-  { icon: Smartphone, label: "Responsividade" },
-  { icon: GitBranch, label: "Versionamento com Git" },
-  { icon: Eye, label: "Atenção a detalhes" },
-];
+const itemIcons = [Folder, Puzzle, Tag, Smartphone, GitBranch, Eye];
 
-export default function Experience() {
+type ExperienceProps = { t: Translation };
+
+export default function Experience({ t }: ExperienceProps) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+
+  const items = t.behindCode.items.map((label, i) => ({ label, icon: itemIcons[i] }));
 
   return (
     <section id="experience" ref={ref} style={{ padding: "120px 5%", position: "relative" }}>
@@ -24,9 +22,9 @@ export default function Experience() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="text-purple-400 text-xs font-mono tracking-[0.3em] uppercase mb-3">Processo</p>
+          <p className="text-purple-400 text-xs font-mono tracking-[0.3em] uppercase mb-3">{t.behindCode.label}</p>
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">
-            Por trás do código
+            {t.behindCode.heading}
           </h2>
         </motion.div>
 

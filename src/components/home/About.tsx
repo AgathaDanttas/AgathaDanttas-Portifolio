@@ -7,32 +7,18 @@ type AboutProps = {
   t: Translation;
 };
 
+const differentialIcons = [Layers, Code2, Globe];
+
 export default function About({ t }: AboutProps) {
-  const differentials = [
-    { icon: Layers, label: "Foco em desenvolvimento full-stack" },
-    { icon: Code2, label: "Base sólida em lógica e organização" },
-    { icon: Globe, label: "Interesse em sistemas modernos e UX" },
-  ];
+  const differentials = t.about.differentials.map((label, i) => ({
+    label,
+    icon: differentialIcons[i],
+  }));
 
   const tags = ["TypeScript", "React", "NodeJS", "TailwindCSS", "C#", "Java", "MongoDB", "MySQL", "Kanban", "VS Code", "Figma"];
 
   return (
     <section id="about" style={{ padding: "120px 5%", position: "relative" }}>
-      <div
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%,-50%)",
-          width: 500,
-          height: 500,
-          borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(124,58,237,0.05) 0%, transparent 70%)",
-          filter: "blur(40px)",
-          pointerEvents: "none",
-        }}
-      />
-
       <div style={{ maxWidth: 1100, margin: "0 auto", position: "relative", zIndex: 1 }}>
         <Reveal>
           <p
