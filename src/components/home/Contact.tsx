@@ -15,21 +15,6 @@ export default function Contact({ t }: ContactProps) {
     <section id="contact" style={{ padding: "120px 5% 80px", position: "relative" }}>
       <div
         style={{
-          position: "absolute",
-          top: "30%",
-          left: "50%",
-          transform: "translateX(-50%)",
-          width: 600,
-          height: 400,
-          borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(124,58,237,0.06) 0%, transparent 70%)",
-          filter: "blur(60px)",
-          pointerEvents: "none",
-        }}
-      />
-
-      <div
-        style={{
           maxWidth: 700,
           margin: "0 auto",
           textAlign: "center",
@@ -118,6 +103,8 @@ export default function Contact({ t }: ContactProps) {
               <a
                 key={index}
                 href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="social-btn"
                 style={{
                   display: "flex",

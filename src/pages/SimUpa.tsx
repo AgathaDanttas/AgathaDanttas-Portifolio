@@ -1,28 +1,16 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft, Activity, Truck, Users, Shield, Zap, Layout, Clock, AlertTriangle } from "lucide-react";
+import { ArrowLeft, Activity, Truck, Zap, Layout } from "lucide-react";
 import { Link } from "react-router-dom";
 import { translations } from "../data/translations";
 import type { Language } from "../types/language";
+import { getInitialLang, persistLang } from "../lib/lang";
 import Navbar from "../components/home/NavBar";
 import ParticleCanvas from "../components/home/ParticleCanvas";
 import CustomCursor from "../components/home/CustomCursor";
 
-// Mock data for the "Live" dashboard preview
-const upaStatus = [
-  { name: "UPA Central", slots: 42, occupancy: 85, status: "warning", trend: "up" },
-  { name: "UPA Norte", slots: 15, occupancy: 40, status: "success", trend: "down" },
-  { name: "UPA Sul", slots: 8, occupancy: 92, status: "danger", trend: "stable" },
-];
-
-const stats = [
-  { label: "Tempo de Resposta", value: "-20%", icon: Clock, color: "text-blue-400" },
-  { label: "Precisão de Regulação", value: "98%", icon: Shield, color: "text-emerald-400" },
-  { label: "Ambulâncias Ativas", value: "14", icon: Truck, color: "text-purple-400" },
-];
-
 export default function SimUpa() {
-  const [lang, setLang] = useState<Language>("pt");
+  const [lang, setLang] = useState<Language>(getInitialLang);
   const [scrolled, setScrolled] = useState(false);
   const t = translations[lang];
 
@@ -32,6 +20,10 @@ export default function SimUpa() {
     window.addEventListener("scroll", handler);
     return () => window.removeEventListener("scroll", handler);
   }, []);
+
+  useEffect(() => {
+    persistLang(lang);
+  }, [lang]);
 
   return (
     <div className="bg-[#050508] min-h-screen text-white selection:bg-purple-500/30">

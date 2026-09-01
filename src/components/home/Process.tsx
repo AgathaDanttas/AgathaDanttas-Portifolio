@@ -1,34 +1,17 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Lightbulb, Layout, Cpu, RefreshCw } from "lucide-react";
+import type { Translation } from "../../types/translation";
 
+const cardIcons = [Lightbulb, Layout, Cpu, RefreshCw];
 
-const cards = [
-  {
-    icon: Lightbulb,
-    title: "Clareza antes de código",
-    desc: "Busco entender bem o problema antes de partir para a implementação.",
-  },
-  {
-    icon: Layout,
-    title: "Estrutura importa",
-    desc: "Gosto de projetos organizados, com componentes reutilizáveis e responsabilidades bem definidas.",
-  },
-  {
-    icon: Cpu,
-    title: "Experiência também é engenharia",
-    desc: "Não penso só no funcionamento, mas em como a interface comunica valor e facilita o uso.",
-  },
-  {
-    icon: RefreshCw,
-    title: "Aprendizado contínuo",
-    desc: "Estou sempre evoluindo minha base técnica e refinando minha forma de construir soluções.",
-  },
-];
+type ProcessProps = { t: Translation };
 
-export default function Process() {
+export default function Process({ t }: ProcessProps) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+
+  const cards = t.mindset.cards.map((card, i) => ({ ...card, icon: cardIcons[i] }));
 
   return (
     <section id="process" ref={ref} style={{ padding: "120px 5%", position: "relative" }}>
@@ -39,9 +22,9 @@ export default function Process() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="text-purple-400 text-xs font-mono tracking-[0.3em] uppercase mb-3">Mentalidade</p>
+          <p className="text-purple-400 text-xs font-mono tracking-[0.3em] uppercase mb-3">{t.mindset.label}</p>
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">
-            Como eu penso no desenvolvimento
+            {t.mindset.heading}
           </h2>
         </motion.div>
 
