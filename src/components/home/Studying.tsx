@@ -1,18 +1,17 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { BookOpen } from "lucide-react";
+import type { Translation } from "../../types/translation";
 
-const topics = [
-  { emoji: "☕", label: "Java e Spring" },
-  { emoji: "🏗️", label: "Arquitetura de software" },
-  { emoji: "🔗", label: "APIs REST" },
-  { emoji: "📐", label: "Boas práticas" },
-  { emoji: "📊", label: "Dados em sistemas web" },
-];
+const topicEmojis = ["☕", "🏗️", "🔗", "📐", "📊"];
 
-export default function StudyingSection() {
+type StudyingProps = { t: Translation };
+
+export default function StudyingSection({ t }: StudyingProps) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+
+  const topics = t.studying.topics.map((label, i) => ({ label, emoji: topicEmojis[i] }));
 
   return (
     <section ref={ref} style={{ padding: "120px 5%", position: "relative" }}>
@@ -26,10 +25,10 @@ export default function StudyingSection() {
           <div className="shrink-0">
             <div className="flex items-center gap-2 mb-2">
               <BookOpen size={16} className="text-purple-400" />
-              <p className="text-purple-400 text-xs font-mono tracking-[0.3em] uppercase">Em evolução</p>
+              <p className="text-purple-400 text-xs font-mono tracking-[0.3em] uppercase">{t.studying.label}</p>
             </div>
             <h2 className="text-2xl md:text-3xl font-bold text-white whitespace-nowrap">
-              O que estou estudando
+              {t.studying.heading}
             </h2>
           </div>
 

@@ -1,9 +1,21 @@
-type ProjectItem = {
+export type ProjectKey = "refakt-erp" | "stox" | "sim-upa";
+
+type CaseStudy = {
+  problem: string;
+  solution: string;
+  challenges: string[];
+  technicalDecisions: string[];
+  architecture: string[];
+  results: string[];
+  futureImprovements: string[];
+};
+
+export type ProjectItem = {
+  key: ProjectKey;
   title: string;
   desc: string;
-  stack: string[];
-  category: string;
-  featured?: boolean;
+  problem: string;
+  caseStudy: CaseStudy;
 };
 
 type SkillCategory = {
@@ -13,12 +25,10 @@ type SkillCategory = {
 
 export type Translation = {
   nav: {
-    home: string;
     about: string;
     projects: string;
     skills: string;
     contact: string;
-    experience?: string;
   };
   hero: {
     greeting: string;
@@ -27,6 +37,7 @@ export type Translation = {
     cta: string;
     cta2: string;
     downloadCV: string;
+    cvFile: string;
   };
   about: {
     heading: string;
@@ -34,33 +45,43 @@ export type Translation = {
     p2: string;
     p3: string;
     p4: string;
-    stat1: string;
-    stat2: string;
-    stat3: string;
-  };
-  experience: {
-    heading: string;
-    educationHeading: string;
-    jobs: { title: string; company: string; period: string; description: string }[];
-    education: { degree: string; school: string; period: string; description: string }[];
-  };
-
-  process: {
-    heading: string;
-    steps: { title: string; desc: string }[];
-  };
-  certifications: {
-    heading: string;
-    items: { title: string; issuer: string; date: string }[];
+    differentials: string[];
   };
   projects: {
+    label: string;
     heading: string;
-    sub?: string;
-    demo: string;
-    github: string;
-    allProjectsHeading: string;
-    filterAll: string;
+    featuredBadge: string;
+    inProgress: string;
+    inProduction: string;
+    done: string;
+    onRequest: string;
+    viewProject: string;
+    viewCode: string;
+    caseButton: string;
+    caseStudyLabel: string;
+    problemLabel: string;
+    solutionLabel: string;
+    challengesLabel: string;
+    decisionsLabel: string;
+    architectureLabel: string;
+    resultsLabel: string;
+    futureLabel: string;
     items: ProjectItem[];
+  };
+  mindset: {
+    label: string;
+    heading: string;
+    cards: { title: string; desc: string }[];
+  };
+  behindCode: {
+    label: string;
+    heading: string;
+    items: string[];
+  };
+  studying: {
+    label: string;
+    heading: string;
+    topics: string[];
   };
   skills: {
     heading: string;
@@ -68,7 +89,7 @@ export type Translation = {
     categories: SkillCategory[];
   };
   contact: {
-    label: ReactNode;
+    label: string;
     heading: string;
     sub: string;
     email: string;

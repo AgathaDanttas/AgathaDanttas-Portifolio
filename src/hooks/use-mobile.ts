@@ -4,7 +4,7 @@ export type RevealDirection = "up" | "down" | "left" | "right";
 
 export function useScrollReveal(
   threshold = 0.15
-): [React.RefObject<HTMLDivElement | null>, boolean] {
+): [React.MutableRefObject<HTMLDivElement | null>, boolean] {
   const ref = useRef<HTMLDivElement | null>(null);
   const [visible, setVisible] = useState(false);
 

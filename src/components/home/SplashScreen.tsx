@@ -45,10 +45,12 @@ export default function SplashScreen({ onDone }: SplashScreenProps) {
               animation: phase !== "in" ? "spinSlow 8s linear infinite" : "none",
             }}
           >
-            <circle
-              cx="60"
-              cy="60"
-              r="54"
+            <rect
+              x="6"
+              y="6"
+              width="108"
+              height="108"
+              rx="26"
               fill="none"
               stroke="#7c3aed"
               strokeWidth="1"
@@ -64,7 +66,7 @@ export default function SplashScreen({ onDone }: SplashScreenProps) {
               inset: "12px",
               background: "linear-gradient(135deg, #7c3aed22, #0a0a0a)",
               border: "1px solid #7c3aed55",
-              borderRadius: "50%",
+              borderRadius: 20,
               display: "flex",
               alignItems: "center",
               justifyContent: "center",

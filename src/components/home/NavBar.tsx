@@ -45,7 +45,7 @@ export default function Navbar({ t, lang, setLang, scrolled }: NavbarProps) {
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="flex cursor-pointer items-center gap-2.5"
         >
-          <div className="flex h-[38px] w-[38px] items-center justify-center rounded-full border border-violet-500/40 bg-gradient-to-br from-violet-500/20 to-black shadow-[0_0_12px_rgba(124,58,237,0.25)]">
+          <div className="flex h-[38px] w-[38px] items-center justify-center rounded-lg border border-violet-500/40 bg-gradient-to-br from-violet-500/20 to-black shadow-[0_0_12px_rgba(124,58,237,0.25)]">
             <span className="bg-gradient-to-br from-violet-300 to-violet-600 bg-clip-text font-mono text-sm font-bold text-transparent">
               AD
             </span>

@@ -4,7 +4,6 @@ import type { Language } from "../types/language";
 export const translations: Record<Language, Translation> = {
   pt: {
     nav: {
-      home: "Início",
       about: "Sobre",
       projects: "Projetos",
       skills: "Habilidades",
@@ -17,6 +16,7 @@ export const translations: Record<Language, Translation> = {
       cta: "Ver Meu Trabalho",
       cta2: "Entrar em Contato",
       downloadCV: "Baixar Currículo",
+      cvFile: "/cv/Curriculo-AgathaDantas-PT.pdf",
     },
     about: {
       heading: "Onde design encontra engenharia",
@@ -24,99 +24,183 @@ export const translations: Record<Language, Translation> = {
       p2: "Atuo na interseção entre design e engenharia, transformando ideias em soluções digitais funcionais, elegantes e escaláveis. Mais do que fazer interfaces bonitas, me preocupo com a qualidade do código, organização do projeto e a experiência real de quem utiliza o sistema.",
       p3: "Tenho experiência em desenvolvimento full-stack e estou em constante evolução, aprofundando meus conhecimentos em arquitetura de software, back-end e boas práticas de desenvolvimento.",
       p4: "Quando não estou programando, gosto de explorar novas tendências de design, estudar tecnologia e experimentar ideias criativas em projetos pessoais.",
-      stat1: "Projetos Criados",
-      stat2: "Tecnologias",
-      stat3: "Anos de Experiência",
-    },
-    experience: {
-      heading: "Trajetória",
-      educationHeading: "Educação",
-      jobs: [
-        { title: "Desenvolvedora Full-Stack", company: "Empresa", period: "2023 - Presente", description: "Desenvolvimento de aplicações modernas..." }
+      differentials: [
+        "Foco em desenvolvimento full-stack",
+        "Base sólida em lógica e organização",
+        "Interesse em sistemas modernos e UX",
       ],
-      education: [
-        { degree: "Engenharia de Software", school: "Universidade", period: "2022 - 2026", description: "Estudos com foco em arquitetura de software." }
-      ]
-    },
-    process: {
-      heading: "Meu Processo",
-      steps: [
-        { title: "Descoberta", desc: "Análise de requisitos e entendimento do problema." },
-        { title: "Design", desc: "Prototipagem de soluções focadas em UX/UI." },
-        { title: "Desenvolvimento", desc: "Escrita de código limpo, escalável e testado." },
-        { title: "Entrega", desc: "Deploy contínuo e acompanhamento pós-lançamento." }
-      ]
-    },
-    certifications: {
-      heading: "Certificações",
-      items: [
-        { title: "Certificação em React", issuer: "Alura", date: "2023" },
-        { title: "Bootcamp Fullstack", issuer: "Rocketseat", date: "2022" }
-      ]
     },
     projects: {
+      label: "Trabalhos",
       heading: "Projetos em Destaque",
-      demo: "Demo",
-      github: "GitHub",
-      allProjectsHeading: "Todos os Projetos",
-      filterAll: "Todos",
+      featuredBadge: "Destaque",
+      inProgress: "Em desenvolvimento",
+      inProduction: "Em produção",
+      done: "Concluído",
+      onRequest: "Demonstração sob solicitação",
+      viewProject: "Ver projeto",
+      viewCode: "Ver código",
+      caseButton: "Case",
+      caseStudyLabel: "Estudo de Caso",
+      problemLabel: "Problema",
+      solutionLabel: "Solução",
+      challengesLabel: "Desafios",
+      decisionsLabel: "Decisões Técnicas",
+      architectureLabel: "Arquitetura",
+      resultsLabel: "Resultados",
+      futureLabel: "Melhorias Futuras",
       items: [
         {
-          title: "NexaUI Design System",
-          desc: "Uma biblioteca completa de componentes construída com React e Tailwind CSS. Inclui mais de 60 componentes, modo escuro e foco em acessibilidade.",
-          stack: ["React", "Tailwind CSS", "TypeScript", "Storybook"],
-          category: "Design System",
-          featured: true,
+          key: "refakt-erp",
+          title: "Refakt ERP",
+          desc: "ERP web multi-empresa com módulos de RH, Financeiro e Fornecedores, controle de acesso por perfis e arquitetura multi-tenant.",
+          problem: "Gestão de RH e Financeiro espalhada em planilhas e sistemas desconectados.",
+          caseStudy: {
+            problem: "Empresas de médio porte administram RH, Financeiro e Fornecedores em planilhas e sistemas separados, sem controle de acesso, histórico confiável ou visão consolidada.",
+            solution: "Desenvolvo o Refakt ERP, uma plataforma web multi-tenant que centraliza RH, Financeiro e Fornecedores, com permissões por perfil e unidade, relatórios e importação de dados de planilhas.",
+            challenges: [
+              "Modelar a arquitetura multi-tenant com banco mestre e provisionamento de novos clientes.",
+              "Implementar RBAC em que o admin atribui perfis e unidades, nunca permissões diretas.",
+              "Traduzir regras de negócio reais (férias, comissões, baixa de contas) em software confiável.",
+            ],
+            technicalDecisions: [
+              "Monorepo pnpm com apps separados (web, API e plataforma de administração).",
+              "Next.js com TypeScript no frontend e Prisma + PostgreSQL na camada de dados.",
+              "Banco mestre para gestão de tenants, isolando os dados de cada cliente.",
+            ],
+            architecture: [
+              "Aplicação web (Next.js) + API + plataforma administrativa.",
+              "Módulos de RH, Financeiro e Fornecedores com permissões por perfil e unidade.",
+              "Ambientes separados de desenvolvimento e homologação.",
+            ],
+            results: [
+              "Em produção no primeiro cliente, substituindo planilhas no dia a dia.",
+              "Processos de RH e Financeiro centralizados com trilha de auditoria.",
+              "Base multi-tenant pronta para atender novos clientes.",
+            ],
+            futureImprovements: [
+              "Novos módulos, como Compras/Vendas e Folha de Ponto.",
+              "Tema white-label personalizado por cliente.",
+              "Planos de assinatura com limites aplicados automaticamente.",
+            ],
+          },
         },
         {
+          key: "stox",
+          title: "Stox",
+          desc: "Sistema de gerenciamento de estoque com controle de produtos, movimentações em tempo real, dashboards e chat integrado.",
+          problem: "Falta de controle organizado sobre produtos e movimentações em estoque.",
+          caseStudy: {
+            problem: "Empresas e usuários enfrentam dificuldades para controlar entradas e saídas de produtos de forma organizada e confiável.",
+            solution: "Desenvolvi o Stox, um sistema de gerenciamento de estoque que permite controlar produtos, registrar movimentações em tempo real e visualizar dados de forma clara através de dashboards.",
+            challenges: [
+              "Modelar corretamente as movimentações de entrada e saída de produtos",
+              "Manter a consistência dos dados em tempo real",
+              "Organizar o estado da aplicação de forma escalável",
+            ],
+            technicalDecisions: [
+              "Utilizei React com TypeScript para garantir tipagem forte e maior previsibilidade do código.",
+              "Escolhi MongoDB pela flexibilidade no armazenamento de dados relacionados a produtos.",
+              "A arquitetura foi baseada em componentes reutilizáveis para facilitar manutenção.",
+            ],
+            architecture: [
+              "Componentização baseada em responsabilidade",
+              "Separação clara entre UI, lógica e dados",
+              "Uso de tipagem para maior segurança e escalabilidade",
+            ],
+            results: [
+              "Melhoria na organização e controle de estoque",
+              "Redução de erros em registros de movimentações",
+              "Interface intuitiva que facilita o uso por diferentes usuários",
+            ],
+            futureImprovements: [
+              "Implementar autenticação e controle de acesso por usuário",
+              "Adicionar relatórios avançados e analytics",
+              "Integração com APIs externas para automação de processos",
+            ],
+          },
+        },
+        {
+          key: "sim-upa",
           title: "SIM-UPA",
           desc: "Sistema integrado de monitoramento e regulação de UPAs com suporte a frotas de ambulâncias e encaminhamento inteligente.",
-          stack: ["React", "Node.js", "PostgreSQL", "Google Maps API"],
-          category: "HealthTech",
-          featured: true,
+          problem: "Superlotação e falta de dados em tempo real para regulação médica e logística de ambulâncias.",
+          caseStudy: {
+            problem: "As UPAs enfrentam superlotação constante e falta de visibilidade sobre a capacidade real, dificultando o direcionamento de pacientes e ambulâncias.",
+            solution: "Desenvolvi o SIM-UPA, uma plataforma que centraliza os dados de ocupação e oferece um módulo exclusivo para ambulâncias (SAMU) com encaminhamento inteligente e comunicação em tempo real.",
+            challenges: [
+              "Integração de dados em tempo real com regras de lotação (Verde <70%, Amarelo 70-90%, Vermelho >90%).",
+              "Implementação de alertas automáticos para frotas de ambulâncias.",
+              "Garantia de segurança e anonimato dos dados conforme a LGPD.",
+            ],
+            technicalDecisions: [
+              "Uso de WebSockets para atualizações instantâneas de status e alertas.",
+              "Integração com Google Maps API para cálculo de rotas otimizadas baseadas em lotação.",
+              "Arquitetura baseada em microserviços para isolar o módulo de regulação do dashboard público.",
+            ],
+            architecture: [
+              "Dashboard de monitoramento em tempo real (Gestor/Público).",
+              "Módulo de Regulação e Logística de Ambulâncias.",
+              "API REST com fluxos de dados seguros (Ambulância -> Central -> UPA).",
+            ],
+            results: [
+              "Redução estimada de 20% no tempo de deslocamento de ambulâncias.",
+              "Otimização do atendimento e redução de filas por meio de direcionamento inteligente.",
+              "Tomada de decisão rápida para gestores baseada em tendências históricas.",
+            ],
+            futureImprovements: [
+              "Utilização de IA para previsão de picos de lotação com 24h de antecedência.",
+              "Integração completa com wearables para triagem antecipada dentro da ambulância.",
+              "Dashboard analítico avançado para planejamento de plantões e alocação de recursos.",
+            ],
+          },
         },
-        {
-          title: "FinTech Landing Page",
-          desc: "Página de conversão moderna e de alta performance para uma startup de finanças, focada em SEO.",
-          stack: ["React", "Framer Motion", "Tailwind CSS"],
-          category: "Landing Page",
-          featured: true,
-        },
-        {
-          title: "App de Gestão Kanban",
-          desc: "Aplicativo web de organização usando a metodologia Kanban com atualizações em tempo real.",
-          stack: ["React", "Node.js", "MongoDB", "WebSockets"],
-          category: "SaaS",
-          featured: false,
-        },
-        {
-          title: "Portfolio Fotográfico",
-          desc: "Site de portfólio minimalista para fotógrafos profissionais com galeria otimizada.",
-          stack: ["React", "TypeScript", "CSS"],
-          category: "Landing Page",
-          featured: false,
-        }
+      ],
+    },
+    mindset: {
+      label: "Mentalidade",
+      heading: "Como eu penso no desenvolvimento",
+      cards: [
+        { title: "Clareza antes de código", desc: "Busco entender bem o problema antes de partir para a implementação." },
+        { title: "Estrutura importa", desc: "Gosto de projetos organizados, com componentes reutilizáveis e responsabilidades bem definidas." },
+        { title: "Experiência também é engenharia", desc: "Não penso só no funcionamento, mas em como a interface comunica valor e facilita o uso." },
+        { title: "Aprendizado contínuo", desc: "Estou sempre evoluindo minha base técnica e refinando minha forma de construir soluções." },
+      ],
+    },
+    behindCode: {
+      label: "Processo",
+      heading: "Por trás do código",
+      items: [
+        "Organização de pastas",
+        "Componentização",
+        "Nomenclatura clara",
+        "Responsividade",
+        "Versionamento com Git",
+        "Atenção a detalhes",
+      ],
+    },
+    studying: {
+      label: "Em evolução",
+      heading: "O que estou estudando",
+      topics: [
+        "Java e Spring",
+        "Arquitetura de software",
+        "APIs REST",
+        "Boas práticas",
+        "Dados em sistemas web",
       ],
     },
     skills: {
       heading: "Stack & Especialidades",
       sub: "Tecnologias com as quais trabalho no dia a dia.",
       categories: [
-        {
-          cat: "Frontend",
-          items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Angular"],
-        },
-        {
-          cat: "Backend",
-          items: ["TypeScript", "Node.js", "C#", "Java", "Python", "GraphQL", "REST APIs", "PostgreSQL", "MongoDB"],
-        },
-        {
-          cat: "Ferramentas",
-          items: ["Git", "Docker", "AWS", "Vercel", "Figma", "CI/CD"],
-        },
+        { cat: "Frontend", items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Angular"] },
+        { cat: "Backend", items: ["TypeScript", "Node.js", "C#", "Java", "Python", "GraphQL", "REST APIs", "PostgreSQL", "MongoDB"] },
+        { cat: "Ferramentas", items: ["Git", "Docker", "AWS", "Vercel", "Figma", "CI/CD"] },
       ],
     },
     contact: {
+      label: "Contato",
       heading: "Vamos Trabalhar Juntas",
       sub: "Tem um projeto em mente? Vou adorar conversar sobre ele.",
       email: "Dizer Olá",
@@ -125,8 +209,10 @@ export const translations: Record<Language, Translation> = {
   },
   en: {
     nav: {
-      home: "Home",
-      about: "About", projects: "Projects", skills: "Skills", contact: "Contact"
+      about: "About",
+      projects: "Projects",
+      skills: "Skills",
+      contact: "Contact",
     },
     hero: {
       greeting: "Hello, I'm",
@@ -134,7 +220,8 @@ export const translations: Record<Language, Translation> = {
       title: "Web Developer & Software Engineer",
       cta: "View My Work",
       cta2: "Get In Touch",
-      downloadCV: "Download CV",
+      downloadCV: "Download Resume",
+      cvFile: "/cv/Resume-AgathaDantas-EN.pdf",
     },
     about: {
       heading: "Where design meets engineering",
@@ -142,100 +229,183 @@ export const translations: Record<Language, Translation> = {
       p2: "I operate at the intersection of design and engineering, transforming ideas into functional, elegant, and scalable digital solutions. More than making beautiful interfaces, I care about code quality, project organization, and the real experience of those who use the system.",
       p3: "I have experience in full-stack development and am constantly evolving, deepening my knowledge in software architecture, back-end, and development best practices.",
       p4: "When I'm not coding, I like to explore design trends, study technology, and experiment with creative ideas in personal projects.",
-      stat1: "Projects Built",
-      stat2: "Technologies",
-      stat3: "Years Experience",
-    },
-    experience: {
-      heading: "Experience",
-      educationHeading: "Education",
-      jobs: [
-        { title: "Full-Stack Developer", company: "Company", period: "2023 - Present", description: "Development of modern applications..." }
+      differentials: [
+        "Focus on full-stack development",
+        "Solid foundation in logic and organization",
+        "Interest in modern systems and UX",
       ],
-      education: [
-        { degree: "Software Engineering", school: "University", period: "2022 - 2026", description: "Focusing on software architecture." }
-      ]
-    },
-    process: {
-      heading: "My Process",
-      steps: [
-        { title: "Discovery", desc: "Requirement analysis and problem understanding." },
-        { title: "Design", desc: "Prototyping UX/UI focused solutions." },
-        { title: "Development", desc: "Writing clean, scalable, and tested code." },
-        { title: "Launch", desc: "Continuous deployment and monitoring." }
-      ]
-    },
-    certifications: {
-      heading: "Certifications",
-      items: [
-        { title: "React Certification", issuer: "Alura", date: "2023" },
-        { title: "Fullstack Bootcamp", issuer: "Rocketseat", date: "2022" }
-      ]
     },
     projects: {
-      heading: "Selected Work",
-      sub: "A few projects I'm proud of.",
-      demo: "Live Demo",
-      github: "GitHub",
-      allProjectsHeading: "All Projects",
-      filterAll: "All",
+      label: "Work",
+      heading: "Featured Projects",
+      featuredBadge: "Featured",
+      inProgress: "In development",
+      inProduction: "In production",
+      done: "Completed",
+      onRequest: "Demo available on request",
+      viewProject: "View project",
+      viewCode: "View code",
+      caseButton: "Case",
+      caseStudyLabel: "Case Study",
+      problemLabel: "Problem",
+      solutionLabel: "Solution",
+      challengesLabel: "Challenges",
+      decisionsLabel: "Technical Decisions",
+      architectureLabel: "Architecture",
+      resultsLabel: "Results",
+      futureLabel: "Future Improvements",
       items: [
         {
-          title: "NexaUI Design System",
-          desc: "A complete component library built with React and Tailwind CSS.",
-          stack: ["React", "Tailwind CSS", "TypeScript", "Storybook"],
-          category: "Design System",
-          featured: true,
+          key: "refakt-erp",
+          title: "Refakt ERP",
+          desc: "Multi-company web ERP with HR, Finance, and Suppliers modules, role-based access control, and multi-tenant architecture.",
+          problem: "HR and finance management scattered across spreadsheets and disconnected systems.",
+          caseStudy: {
+            problem: "Mid-sized companies manage HR, finance, and suppliers in spreadsheets and separate systems, with no access control, reliable history, or consolidated view.",
+            solution: "I'm building Refakt ERP, a multi-tenant web platform that centralizes HR, Finance, and Suppliers, with role- and unit-based permissions, reports, and spreadsheet data import.",
+            challenges: [
+              "Modeling the multi-tenant architecture with a master database and client provisioning.",
+              "Implementing RBAC where admins assign roles and units, never direct permissions.",
+              "Turning real business rules (vacations, commissions, account settlement) into reliable software.",
+            ],
+            technicalDecisions: [
+              "pnpm monorepo with separate apps (web, API, and admin platform).",
+              "Next.js with TypeScript on the frontend and Prisma + PostgreSQL on the data layer.",
+              "Master database for tenant management, isolating each client's data.",
+            ],
+            architecture: [
+              "Web application (Next.js) + API + admin platform.",
+              "HR, Finance, and Suppliers modules with role- and unit-based permissions.",
+              "Separate development and staging environments.",
+            ],
+            results: [
+              "In production at the first client, replacing day-to-day spreadsheets.",
+              "Centralized HR and finance processes with an audit trail.",
+              "Multi-tenant foundation ready to onboard new clients.",
+            ],
+            futureImprovements: [
+              "New modules such as Purchasing/Sales and Time Tracking.",
+              "White-label theming per client.",
+              "Subscription plans with automatically enforced limits.",
+            ],
+          },
         },
         {
+          key: "stox",
+          title: "Stox",
+          desc: "Inventory management system with product control, real-time stock movements, dashboards, and built-in chat.",
+          problem: "Lack of organized control over products and stock movements.",
+          caseStudy: {
+            problem: "Companies and users struggle to track product inflows and outflows in an organized, reliable way.",
+            solution: "I built Stox, an inventory management system that lets you manage products, record stock movements in real time, and visualize data clearly through dashboards.",
+            challenges: [
+              "Correctly modeling product inflow and outflow movements",
+              "Keeping data consistent in real time",
+              "Organizing application state in a scalable way",
+            ],
+            technicalDecisions: [
+              "I used React with TypeScript to ensure strong typing and more predictable code.",
+              "I chose MongoDB for its flexibility in storing product-related data.",
+              "The architecture was based on reusable components to ease maintenance.",
+            ],
+            architecture: [
+              "Responsibility-based componentization",
+              "Clear separation between UI, logic, and data",
+              "Typing for safety and scalability",
+            ],
+            results: [
+              "Better inventory organization and control",
+              "Fewer errors in movement records",
+              "Intuitive interface that suits different users",
+            ],
+            futureImprovements: [
+              "Implement authentication and per-user access control",
+              "Add advanced reports and analytics",
+              "Integrate external APIs for process automation",
+            ],
+          },
+        },
+        {
+          key: "sim-upa",
           title: "SIM-UPA",
-          desc: "Integrated UPA monitoring and regulation system with ambulance fleet support and intelligent routing.",
-          stack: ["React", "Node.js", "PostgreSQL", "Google Maps API"],
-          category: "HealthTech",
-          featured: true,
+          desc: "Integrated emergency care unit (UPA) monitoring and regulation system with ambulance fleet support and intelligent routing.",
+          problem: "Overcrowding and lack of real-time data for medical regulation and ambulance logistics.",
+          caseStudy: {
+            problem: "UPAs face constant overcrowding and lack visibility into real capacity, making it hard to route patients and ambulances.",
+            solution: "I built SIM-UPA, a platform that centralizes occupancy data and offers a dedicated ambulance (SAMU) module with intelligent routing and real-time communication.",
+            challenges: [
+              "Integrating real-time data with occupancy rules (Green <70%, Yellow 70-90%, Red >90%).",
+              "Implementing automatic alerts for ambulance fleets.",
+              "Ensuring data security and anonymity in compliance with LGPD (Brazil's data protection law).",
+            ],
+            technicalDecisions: [
+              "WebSockets for instant status updates and alerts.",
+              "Google Maps API integration to compute optimized, occupancy-aware routes.",
+              "Microservice-based architecture to isolate the regulation module from the public dashboard.",
+            ],
+            architecture: [
+              "Real-time monitoring dashboard (Manager/Public).",
+              "Ambulance Regulation and Logistics module.",
+              "REST API with secure data flows (Ambulance -> Dispatch -> UPA).",
+            ],
+            results: [
+              "Estimated 20% reduction in ambulance travel time.",
+              "Optimized care and shorter queues through intelligent routing.",
+              "Fast decision-making for managers based on historical trends.",
+            ],
+            futureImprovements: [
+              "Use AI to predict occupancy peaks 24 hours in advance.",
+              "Full integration with wearables for early triage inside the ambulance.",
+              "Advanced analytics dashboard for shift planning and resource allocation.",
+            ],
+          },
         },
-        {
-          title: "FinTech Landing Page",
-          desc: "Modern, high-performance conversion page for a finance startup, focused on SEO.",
-          stack: ["React", "Framer Motion", "Tailwind CSS"],
-          category: "Landing Page",
-          featured: true,
-        },
-        {
-          title: "Kanban Management App",
-          desc: "Organization web app using the Kanban methodology with real-time updates.",
-          stack: ["React", "Node.js", "MongoDB", "WebSockets"],
-          category: "SaaS",
-          featured: false,
-        },
-        {
-          title: "Photography Portfolio",
-          desc: "Minimalist portfolio site for professional photographers with optimized gallery.",
-          stack: ["React", "TypeScript", "CSS"],
-          category: "Landing Page",
-          featured: false,
-        }
+      ],
+    },
+    mindset: {
+      label: "Mindset",
+      heading: "How I think about development",
+      cards: [
+        { title: "Clarity before code", desc: "I aim to understand the problem well before jumping into implementation." },
+        { title: "Structure matters", desc: "I like organized projects, with reusable components and well-defined responsibilities." },
+        { title: "Experience is engineering too", desc: "I don't think only about how it works, but about how the interface communicates value and eases use." },
+        { title: "Continuous learning", desc: "I'm always evolving my technical foundation and refining how I build solutions." },
+      ],
+    },
+    behindCode: {
+      label: "Process",
+      heading: "Behind the code",
+      items: [
+        "Folder organization",
+        "Componentization",
+        "Clear naming",
+        "Responsiveness",
+        "Version control with Git",
+        "Attention to detail",
+      ],
+    },
+    studying: {
+      label: "Growing",
+      heading: "What I'm studying",
+      topics: [
+        "Java and Spring",
+        "Software architecture",
+        "REST APIs",
+        "Best practices",
+        "Data in web systems",
       ],
     },
     skills: {
       heading: "Tech Stack & Expertise",
       sub: "Technologies I work with daily.",
       categories: [
-        {
-          cat: "Frontend",
-          items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Angular"],
-        },
-        {
-          cat: "Backend",
-          items: ["TypeScript", "Node.js", "C#", "Java", "Python", "GraphQL", "REST APIs", "PostgreSQL", "MongoDB"],
-        },
-        {
-          cat: "Tools",
-          items: ["Git", "Docker", "AWS", "Vercel", "Figma", "CI/CD"],
-        },
+        { cat: "Frontend", items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Angular"] },
+        { cat: "Backend", items: ["TypeScript", "Node.js", "C#", "Java", "Python", "GraphQL", "REST APIs", "PostgreSQL", "MongoDB"] },
+        { cat: "Tools", items: ["Git", "Docker", "AWS", "Vercel", "Figma", "CI/CD"] },
       ],
     },
     contact: {
+      label: "Contact",
       heading: "Let's Work Together",
       sub: "Have a project in mind? I'd love to hear about it.",
       email: "Say Hello",
@@ -244,8 +414,10 @@ export const translations: Record<Language, Translation> = {
   },
   fr: {
     nav: {
-      home: "Accueil",
-      about: "À propos", projects: "Projets", skills: "Compétences", contact: "Contact"
+      about: "À propos",
+      projects: "Projets",
+      skills: "Compétences",
+      contact: "Contact",
     },
     hero: {
       greeting: "Bonjour, je suis",
@@ -253,7 +425,8 @@ export const translations: Record<Language, Translation> = {
       title: "Développeuse Web & Ingénieure Logiciel",
       cta: "Voir Mon Travail",
       cta2: "Me Contacter",
-      downloadCV: "Télécharger CV",
+      downloadCV: "Télécharger le CV",
+      cvFile: "/cv/Resume-AgathaDantas-EN.pdf",
     },
     about: {
       heading: "Où le design rencontre l'ingénierie",
@@ -261,100 +434,183 @@ export const translations: Record<Language, Translation> = {
       p2: "J'opère à l'intersection du design et de l'ingénierie, en transformant les idées en solutions numériques fonctionnelles, élégantes et évolutives. Au-delà de créer de belles interfaces, je me soucie de la qualité du code, de l'organisation du projet et de l'expérience réelle des utilisateurs du système.",
       p3: "J'ai de l'expérience dans le développement full-stack et je suis en constante évolution, approfondissant mes connaissances en architecture logicielle, back-end et meilleures pratiques de développement.",
       p4: "Quand je ne programme pas, j'aime explorer les nouvelles tendances en matière de design, étudier la technologie et expérimenter des idées créatives dans des projets personnels.",
-      stat1: "Projets Réalisés",
-      stat2: "Technologies",
-      stat3: "Ans d'Expérience",
-    },
-    experience: {
-      heading: "Expérience",
-      educationHeading: "Éducation",
-      jobs: [
-        { title: "Développeuse Full-Stack", company: "Entreprise", period: "2023 - Présent", description: "Développement d'applications modernes..." }
+      differentials: [
+        "Accent sur le développement full-stack",
+        "Base solide en logique et organisation",
+        "Intérêt pour les systèmes modernes et l'UX",
       ],
-      education: [
-        { degree: "Ingénierie Logicielle", school: "Université", period: "2022 - 2026", description: "Études axées sur l'architecture logicielle." }
-      ]
-    },
-    process: {
-      heading: "Mon Processus",
-      steps: [
-        { title: "Découverte", desc: "Analyse des exigences et compréhension du problème." },
-        { title: "Conception", desc: "Prototypage de solutions axées sur l'UX/UI." },
-        { title: "Développement", desc: "Écriture de code propre, évolutif et testé." },
-        { title: "Lancement", desc: "Déploiement continu et suivi." }
-      ]
-    },
-    certifications: {
-      heading: "Certifications",
-      items: [
-        { title: "Certification React", issuer: "Alura", date: "2023" },
-        { title: "Bootcamp Fullstack", issuer: "Rocketseat", date: "2022" }
-      ]
     },
     projects: {
-      heading: "Travaux Sélectionnés",
-      sub: "Quelques projets dont je suis fière.",
-      demo: "Démo",
-      github: "GitHub",
-      allProjectsHeading: "Tous les Projets",
-      filterAll: "Tous",
+      label: "Travaux",
+      heading: "Projets en Vedette",
+      featuredBadge: "Vedette",
+      inProgress: "En développement",
+      inProduction: "En production",
+      done: "Terminé",
+      onRequest: "Démonstration sur demande",
+      viewProject: "Voir le projet",
+      viewCode: "Voir le code",
+      caseButton: "Étude",
+      caseStudyLabel: "Étude de Cas",
+      problemLabel: "Problème",
+      solutionLabel: "Solution",
+      challengesLabel: "Défis",
+      decisionsLabel: "Décisions Techniques",
+      architectureLabel: "Architecture",
+      resultsLabel: "Résultats",
+      futureLabel: "Améliorations Futures",
       items: [
         {
-          title: "NexaUI Design System",
-          desc: "Une bibliothèque complète de composants construite avec React et Tailwind CSS.",
-          stack: ["React", "Tailwind CSS", "TypeScript", "Storybook"],
-          category: "Design System",
-          featured: true,
+          key: "refakt-erp",
+          title: "Refakt ERP",
+          desc: "ERP web multi-entreprise avec modules RH, Finance et Fournisseurs, contrôle d'accès par rôles et architecture multi-tenant.",
+          problem: "Gestion RH et financière dispersée dans des tableurs et des systèmes déconnectés.",
+          caseStudy: {
+            problem: "Les entreprises de taille moyenne gèrent RH, finances et fournisseurs dans des tableurs et des systèmes séparés, sans contrôle d'accès, historique fiable ni vue consolidée.",
+            solution: "Je développe Refakt ERP, une plateforme web multi-tenant qui centralise RH, Finance et Fournisseurs, avec des permissions par rôle et unité, des rapports et l'import de données depuis des tableurs.",
+            challenges: [
+              "Modéliser l'architecture multi-tenant avec base de données maître et provisionnement des clients.",
+              "Implémenter un RBAC où l'admin attribue des rôles et des unités, jamais des permissions directes.",
+              "Traduire des règles métier réelles (congés, commissions, règlement de comptes) en logiciel fiable.",
+            ],
+            technicalDecisions: [
+              "Monorepo pnpm avec des apps séparées (web, API et plateforme d'administration).",
+              "Next.js avec TypeScript côté frontend et Prisma + PostgreSQL côté données.",
+              "Base de données maître pour la gestion des tenants, isolant les données de chaque client.",
+            ],
+            architecture: [
+              "Application web (Next.js) + API + plateforme d'administration.",
+              "Modules RH, Finance et Fournisseurs avec permissions par rôle et unité.",
+              "Environnements de développement et de recette séparés.",
+            ],
+            results: [
+              "En production chez le premier client, remplaçant les tableurs au quotidien.",
+              "Processus RH et financiers centralisés avec piste d'audit.",
+              "Base multi-tenant prête à accueillir de nouveaux clients.",
+            ],
+            futureImprovements: [
+              "Nouveaux modules, comme Achats/Ventes et Feuille de temps.",
+              "Thème white-label personnalisé par client.",
+              "Plans d'abonnement avec limites appliquées automatiquement.",
+            ],
+          },
         },
         {
+          key: "stox",
+          title: "Stox",
+          desc: "Système de gestion de stock avec contrôle des produits, mouvements en temps réel, tableaux de bord et chat intégré.",
+          problem: "Manque de contrôle organisé sur les produits et les mouvements de stock.",
+          caseStudy: {
+            problem: "Les entreprises et les utilisateurs peinent à contrôler les entrées et sorties de produits de manière organisée et fiable.",
+            solution: "J'ai développé Stox, un système de gestion de stock qui permet de contrôler les produits, d'enregistrer les mouvements en temps réel et de visualiser les données clairement grâce à des tableaux de bord.",
+            challenges: [
+              "Modéliser correctement les mouvements d'entrée et de sortie des produits",
+              "Maintenir la cohérence des données en temps réel",
+              "Organiser l'état de l'application de manière évolutive",
+            ],
+            technicalDecisions: [
+              "J'ai utilisé React avec TypeScript pour garantir un typage fort et un code plus prévisible.",
+              "J'ai choisi MongoDB pour sa flexibilité dans le stockage des données liées aux produits.",
+              "L'architecture repose sur des composants réutilisables pour faciliter la maintenance.",
+            ],
+            architecture: [
+              "Componentisation basée sur les responsabilités",
+              "Séparation claire entre UI, logique et données",
+              "Typage pour plus de sécurité et d'évolutivité",
+            ],
+            results: [
+              "Meilleure organisation et contrôle du stock",
+              "Réduction des erreurs dans les enregistrements de mouvements",
+              "Interface intuitive adaptée à différents utilisateurs",
+            ],
+            futureImprovements: [
+              "Mettre en place l'authentification et le contrôle d'accès par utilisateur",
+              "Ajouter des rapports avancés et de l'analytique",
+              "Intégrer des API externes pour automatiser les processus",
+            ],
+          },
+        },
+        {
+          key: "sim-upa",
           title: "SIM-UPA",
-          desc: "Système intégré de surveillance et de régulation des UPA avec support aux flottes d'ambulances et acheminement intelligent.",
-          stack: ["React", "Node.js", "PostgreSQL", "Google Maps API"],
-          category: "HealthTech",
-          featured: true,
+          desc: "Système intégré de surveillance et de régulation des UPA (unités de soins d'urgence) avec support des flottes d'ambulances et acheminement intelligent.",
+          problem: "Surpopulation et manque de données en temps réel pour la régulation médicale et la logistique des ambulances.",
+          caseStudy: {
+            problem: "Les UPA font face à une surpopulation constante et manquent de visibilité sur leur capacité réelle, ce qui complique l'orientation des patients et des ambulances.",
+            solution: "J'ai développé SIM-UPA, une plateforme qui centralise les données d'occupation et offre un module dédié aux ambulances (SAMU) avec acheminement intelligent et communication en temps réel.",
+            challenges: [
+              "Intégration de données en temps réel avec des règles d'occupation (Vert <70%, Jaune 70-90%, Rouge >90%).",
+              "Mise en place d'alertes automatiques pour les flottes d'ambulances.",
+              "Garantie de la sécurité et de l'anonymat des données conformément à la LGPD (loi brésilienne sur la protection des données).",
+            ],
+            technicalDecisions: [
+              "WebSockets pour des mises à jour instantanées des statuts et des alertes.",
+              "Intégration de l'API Google Maps pour des itinéraires optimisés selon l'occupation.",
+              "Architecture en microservices pour isoler le module de régulation du tableau de bord public.",
+            ],
+            architecture: [
+              "Tableau de bord de surveillance en temps réel (Gestionnaire/Public).",
+              "Module de régulation et de logistique des ambulances.",
+              "API REST avec des flux de données sécurisés (Ambulance -> Central -> UPA).",
+            ],
+            results: [
+              "Réduction estimée de 20% du temps de déplacement des ambulances.",
+              "Optimisation des soins et réduction des files d'attente grâce à l'acheminement intelligent.",
+              "Prise de décision rapide pour les gestionnaires grâce aux tendances historiques.",
+            ],
+            futureImprovements: [
+              "Utiliser l'IA pour prévoir les pics d'occupation 24h à l'avance.",
+              "Intégration complète avec des objets connectés pour un triage anticipé dans l'ambulance.",
+              "Tableau de bord analytique avancé pour la planification des gardes et l'allocation des ressources.",
+            ],
+          },
         },
-        {
-          title: "FinTech Landing Page",
-          desc: "Page de conversion moderne et performante pour une startup financière, optimisée pour le SEO.",
-          stack: ["React", "Framer Motion", "Tailwind CSS"],
-          category: "Landing Page",
-          featured: true,
-        },
-        {
-          title: "App de Gestion Kanban",
-          desc: "Application web d'organisation utilisant la méthodologie Kanban avec mises à jour en temps réel.",
-          stack: ["React", "Node.js", "MongoDB", "WebSockets"],
-          category: "SaaS",
-          featured: false,
-        },
-        {
-          title: "Portfolio Photographique",
-          desc: "Site de portfolio minimaliste pour les photographes professionnels avec galerie optimisée.",
-          stack: ["React", "TypeScript", "CSS"],
-          category: "Landing Page",
-          featured: false,
-        }
+      ],
+    },
+    mindset: {
+      label: "État d'esprit",
+      heading: "Ma façon de penser le développement",
+      cards: [
+        { title: "La clarté avant le code", desc: "Je cherche à bien comprendre le problème avant de passer à l'implémentation." },
+        { title: "La structure compte", desc: "J'aime les projets organisés, avec des composants réutilisables et des responsabilités bien définies." },
+        { title: "L'expérience aussi est de l'ingénierie", desc: "Je ne pense pas seulement au fonctionnement, mais à la façon dont l'interface communique de la valeur et facilite l'usage." },
+        { title: "Apprentissage continu", desc: "Je fais constamment évoluer ma base technique et j'affine ma façon de construire des solutions." },
+      ],
+    },
+    behindCode: {
+      label: "Processus",
+      heading: "Derrière le code",
+      items: [
+        "Organisation des dossiers",
+        "Componentisation",
+        "Nommage clair",
+        "Responsivité",
+        "Versionnage avec Git",
+        "Souci du détail",
+      ],
+    },
+    studying: {
+      label: "En évolution",
+      heading: "Ce que j'étudie",
+      topics: [
+        "Java et Spring",
+        "Architecture logicielle",
+        "API REST",
+        "Bonnes pratiques",
+        "Les données dans les systèmes web",
       ],
     },
     skills: {
       heading: "Stack Technique & Expertise",
       sub: "Technologies avec lesquelles je travaille au quotidien.",
       categories: [
-        {
-          cat: "Frontend",
-          items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Angular"],
-        },
-        {
-          cat: "Backend",
-          items: ["TypeScript", "Node.js", "C#", "Java", "Python", "GraphQL", "REST APIs", "PostgreSQL", "MongoDB"],
-        },
-        {
-          cat: "Outils",
-          items: ["Git", "Docker", "AWS", "Vercel", "Figma", "CI/CD"],
-        },
+        { cat: "Frontend", items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Angular"] },
+        { cat: "Backend", items: ["TypeScript", "Node.js", "C#", "Java", "Python", "GraphQL", "REST APIs", "PostgreSQL", "MongoDB"] },
+        { cat: "Outils", items: ["Git", "Docker", "AWS", "Vercel", "Figma", "CI/CD"] },
       ],
     },
     contact: {
+      label: "Contact",
       heading: "Travaillons Ensemble",
       sub: "Vous avez un projet en tête ? J'aimerais beaucoup en entendre parler.",
       email: "Dire Bonjour",
@@ -363,8 +619,10 @@ export const translations: Record<Language, Translation> = {
   },
   es: {
     nav: {
-      home: "Inicio",
-      about: "Sobre mí", projects: "Proyectos", skills: "Habilidades", contact: "Contacto"
+      about: "Sobre mí",
+      projects: "Proyectos",
+      skills: "Habilidades",
+      contact: "Contacto",
     },
     hero: {
       greeting: "Hola, soy",
@@ -373,6 +631,7 @@ export const translations: Record<Language, Translation> = {
       cta: "Ver Mi Trabajo",
       cta2: "Contactarme",
       downloadCV: "Descargar CV",
+      cvFile: "/cv/Resume-AgathaDantas-EN.pdf",
     },
     about: {
       heading: "Donde el diseño encuentra la ingeniería",
@@ -380,100 +639,183 @@ export const translations: Record<Language, Translation> = {
       p2: "Trabajo en la intersección entre el diseño y la ingeniería, transformando ideas en soluciones digitales funcionales, elegantes y escalables. Más que hacer interfaces bonitas, me preocupo por la calidad del código, la organización del proyecto y la experiencia real de quienes utilizan el sistema.",
       p3: "Tengo experiencia en desarrollo full-stack y estoy en constante evolución, profundizando mis conocimientos en arquitectura de software, back-end y buenas prácticas de desarrollo.",
       p4: "Cuando no estoy programando, me gusta explorar nuevas tendencias de diseño, estudiar tecnología y experimentar con ideas creativas en proyectos personales.",
-      stat1: "Proyectos",
-      stat2: "Tecnologías",
-      stat3: "Años de Experiencia",
-    },
-    experience: {
-      heading: "Experiencia",
-      educationHeading: "Educación",
-      jobs: [
-        { title: "Desarrolladora Full-Stack", company: "Empresa", period: "2023 - Presente", description: "Desarrollo de aplicaciones modernas..." }
+      differentials: [
+        "Enfoque en desarrollo full-stack",
+        "Base sólida en lógica y organización",
+        "Interés en sistemas modernos y UX",
       ],
-      education: [
-        { degree: "Ingeniería de Software", school: "Universidad", period: "2022 - 2026", description: "Estudios centrados en la arquitectura de software." }
-      ]
-    },
-    process: {
-      heading: "Mi Proceso",
-      steps: [
-        { title: "Descubrimiento", desc: "Análisis de requisitos y comprensión del problema." },
-        { title: "Diseño", desc: "Prototipado de soluciones centradas en UX/UI." },
-        { title: "Desarrollo", desc: "Escritura de código limpio, escalable y probado." },
-        { title: "Lanzamiento", desc: "Despliegue continuo y seguimiento." }
-      ]
-    },
-    certifications: {
-      heading: "Certificaciones",
-      items: [
-        { title: "Certificación React", issuer: "Alura", date: "2023" },
-        { title: "Bootcamp Fullstack", issuer: "Rocketseat", date: "2022" }
-      ]
     },
     projects: {
-      heading: "Trabajo Seleccionado",
-      sub: "Algunos proyectos de los que estoy orgullosa.",
-      demo: "Demo",
-      github: "GitHub",
-      allProjectsHeading: "Todos los Proyectos",
-      filterAll: "Todos",
+      label: "Trabajos",
+      heading: "Proyectos Destacados",
+      featuredBadge: "Destacado",
+      inProgress: "En desarrollo",
+      inProduction: "En producción",
+      done: "Completado",
+      onRequest: "Demostración bajo solicitud",
+      viewProject: "Ver proyecto",
+      viewCode: "Ver código",
+      caseButton: "Case",
+      caseStudyLabel: "Estudio de Caso",
+      problemLabel: "Problema",
+      solutionLabel: "Solución",
+      challengesLabel: "Desafíos",
+      decisionsLabel: "Decisiones Técnicas",
+      architectureLabel: "Arquitectura",
+      resultsLabel: "Resultados",
+      futureLabel: "Mejoras Futuras",
       items: [
         {
-          title: "NexaUI Design System",
-          desc: "Una biblioteca completa de componentes construida con React y Tailwind CSS.",
-          stack: ["React", "Tailwind CSS", "TypeScript", "Storybook"],
-          category: "Design System",
-          featured: true,
+          key: "refakt-erp",
+          title: "Refakt ERP",
+          desc: "ERP web multiempresa con módulos de RRHH, Finanzas y Proveedores, control de acceso por roles y arquitectura multi-tenant.",
+          problem: "Gestión de RRHH y finanzas dispersa en planillas y sistemas desconectados.",
+          caseStudy: {
+            problem: "Empresas medianas administran RRHH, finanzas y proveedores en planillas y sistemas separados, sin control de acceso, historial confiable ni visión consolidada.",
+            solution: "Desarrollo Refakt ERP, una plataforma web multi-tenant que centraliza RRHH, Finanzas y Proveedores, con permisos por rol y unidad, reportes e importación de datos desde planillas.",
+            challenges: [
+              "Modelar la arquitectura multi-tenant con base de datos maestra y aprovisionamiento de clientes.",
+              "Implementar RBAC donde el admin asigna roles y unidades, nunca permisos directos.",
+              "Traducir reglas de negocio reales (vacaciones, comisiones, liquidación de cuentas) en software confiable.",
+            ],
+            technicalDecisions: [
+              "Monorepo pnpm con apps separadas (web, API y plataforma de administración).",
+              "Next.js con TypeScript en el frontend y Prisma + PostgreSQL en la capa de datos.",
+              "Base de datos maestra para la gestión de tenants, aislando los datos de cada cliente.",
+            ],
+            architecture: [
+              "Aplicación web (Next.js) + API + plataforma administrativa.",
+              "Módulos de RRHH, Finanzas y Proveedores con permisos por rol y unidad.",
+              "Ambientes separados de desarrollo y homologación.",
+            ],
+            results: [
+              "En producción con el primer cliente, reemplazando planillas en el día a día.",
+              "Procesos de RRHH y finanzas centralizados con registro de auditoría.",
+              "Base multi-tenant lista para incorporar nuevos clientes.",
+            ],
+            futureImprovements: [
+              "Nuevos módulos, como Compras/Ventas y Control de Horarios.",
+              "Tema white-label personalizado por cliente.",
+              "Planes de suscripción con límites aplicados automáticamente.",
+            ],
+          },
         },
         {
+          key: "stox",
+          title: "Stox",
+          desc: "Sistema de gestión de inventario con control de productos, movimientos en tiempo real, dashboards y chat integrado.",
+          problem: "Falta de control organizado sobre productos y movimientos de inventario.",
+          caseStudy: {
+            problem: "Empresas y usuarios enfrentan dificultades para controlar entradas y salidas de productos de forma organizada y confiable.",
+            solution: "Desarrollé Stox, un sistema de gestión de inventario que permite controlar productos, registrar movimientos en tiempo real y visualizar datos de forma clara mediante dashboards.",
+            challenges: [
+              "Modelar correctamente los movimientos de entrada y salida de productos",
+              "Mantener la consistencia de los datos en tiempo real",
+              "Organizar el estado de la aplicación de forma escalable",
+            ],
+            technicalDecisions: [
+              "Utilicé React con TypeScript para garantizar tipado fuerte y mayor previsibilidad del código.",
+              "Elegí MongoDB por su flexibilidad para almacenar datos relacionados con productos.",
+              "La arquitectura se basó en componentes reutilizables para facilitar el mantenimiento.",
+            ],
+            architecture: [
+              "Componentización basada en responsabilidades",
+              "Separación clara entre UI, lógica y datos",
+              "Tipado para mayor seguridad y escalabilidad",
+            ],
+            results: [
+              "Mejora en la organización y control del inventario",
+              "Reducción de errores en los registros de movimientos",
+              "Interfaz intuitiva que facilita el uso por distintos usuarios",
+            ],
+            futureImprovements: [
+              "Implementar autenticación y control de acceso por usuario",
+              "Agregar reportes avanzados y analítica",
+              "Integración con APIs externas para automatizar procesos",
+            ],
+          },
+        },
+        {
+          key: "sim-upa",
           title: "SIM-UPA",
-          desc: "Sistema integrado de monitoreo y regulación de UPAs con soporte para flotas de ambulancias y encaminamiento inteligente.",
-          stack: ["React", "Node.js", "PostgreSQL", "Google Maps API"],
-          category: "HealthTech",
-          featured: true,
+          desc: "Sistema integrado de monitoreo y regulación de UPAs (unidades de urgencias) con soporte para flotas de ambulancias y direccionamiento inteligente.",
+          problem: "Sobrecarga y falta de datos en tiempo real para la regulación médica y la logística de ambulancias.",
+          caseStudy: {
+            problem: "Las UPAs enfrentan sobrecarga constante y falta de visibilidad sobre su capacidad real, lo que dificulta el direccionamiento de pacientes y ambulancias.",
+            solution: "Desarrollé SIM-UPA, una plataforma que centraliza los datos de ocupación y ofrece un módulo exclusivo para ambulancias (SAMU) con direccionamiento inteligente y comunicación en tiempo real.",
+            challenges: [
+              "Integración de datos en tiempo real con reglas de ocupación (Verde <70%, Amarillo 70-90%, Rojo >90%).",
+              "Implementación de alertas automáticas para flotas de ambulancias.",
+              "Garantía de seguridad y anonimato de los datos conforme a la LGPD (ley brasileña de protección de datos).",
+            ],
+            technicalDecisions: [
+              "Uso de WebSockets para actualizaciones instantáneas de estado y alertas.",
+              "Integración con Google Maps API para calcular rutas optimizadas según la ocupación.",
+              "Arquitectura basada en microservicios para aislar el módulo de regulación del dashboard público.",
+            ],
+            architecture: [
+              "Dashboard de monitoreo en tiempo real (Gestor/Público).",
+              "Módulo de Regulación y Logística de Ambulancias.",
+              "API REST con flujos de datos seguros (Ambulancia -> Central -> UPA).",
+            ],
+            results: [
+              "Reducción estimada del 20% en el tiempo de desplazamiento de ambulancias.",
+              "Optimización de la atención y reducción de filas mediante direccionamiento inteligente.",
+              "Toma de decisiones rápida para gestores basada en tendencias históricas.",
+            ],
+            futureImprovements: [
+              "Uso de IA para predecir picos de ocupación con 24h de antelación.",
+              "Integración completa con wearables para triaje anticipado dentro de la ambulancia.",
+              "Dashboard analítico avanzado para planificación de turnos y asignación de recursos.",
+            ],
+          },
         },
-        {
-          title: "FinTech Landing Page",
-          desc: "Página de conversión moderna y de alto rendimiento para una startup financiera, enfocada en SEO.",
-          stack: ["React", "Framer Motion", "Tailwind CSS"],
-          category: "Landing Page",
-          featured: true,
-        },
-        {
-          title: "App de Gestión Kanban",
-          desc: "Aplicación web de organización utilizando la metodología Kanban con actualizaciones en tiempo real.",
-          stack: ["React", "Node.js", "MongoDB", "WebSockets"],
-          category: "SaaS",
-          featured: false,
-        },
-        {
-          title: "Portfolio Fotográfico",
-          desc: "Sitio de portafolio minimalista para fotógrafos profesionales con galería optimizada.",
-          stack: ["React", "TypeScript", "CSS"],
-          category: "Landing Page",
-          featured: false,
-        }
+      ],
+    },
+    mindset: {
+      label: "Mentalidad",
+      heading: "Cómo pienso el desarrollo",
+      cards: [
+        { title: "Claridad antes del código", desc: "Busco entender bien el problema antes de pasar a la implementación." },
+        { title: "La estructura importa", desc: "Me gustan los proyectos organizados, con componentes reutilizables y responsabilidades bien definidas." },
+        { title: "La experiencia también es ingeniería", desc: "No pienso solo en el funcionamiento, sino en cómo la interfaz comunica valor y facilita el uso." },
+        { title: "Aprendizaje continuo", desc: "Siempre estoy evolucionando mi base técnica y refinando mi forma de construir soluciones." },
+      ],
+    },
+    behindCode: {
+      label: "Proceso",
+      heading: "Detrás del código",
+      items: [
+        "Organización de carpetas",
+        "Componentización",
+        "Nomenclatura clara",
+        "Responsividad",
+        "Versionado con Git",
+        "Atención al detalle",
+      ],
+    },
+    studying: {
+      label: "En evolución",
+      heading: "Lo que estoy estudiando",
+      topics: [
+        "Java y Spring",
+        "Arquitectura de software",
+        "APIs REST",
+        "Buenas prácticas",
+        "Datos en sistemas web",
       ],
     },
     skills: {
       heading: "Stack Tecnológico & Especialidad",
       sub: "Tecnologías con las que trabajo todos los días.",
       categories: [
-        {
-          cat: "Frontend",
-          items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Angular"],
-        },
-        {
-          cat: "Backend",
-          items: ["TypeScript", "Node.js", "C#", "Java", "Python", "GraphQL", "REST APIs", "PostgreSQL", "MongoDB"],
-        },
-        {
-          cat: "Herramientas",
-          items: ["Git", "Docker", "AWS", "Vercel", "Figma", "CI/CD"],
-        },
+        { cat: "Frontend", items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Angular"] },
+        { cat: "Backend", items: ["TypeScript", "Node.js", "C#", "Java", "Python", "GraphQL", "REST APIs", "PostgreSQL", "MongoDB"] },
+        { cat: "Herramientas", items: ["Git", "Docker", "AWS", "Vercel", "Figma", "CI/CD"] },
       ],
     },
     contact: {
+      label: "Contacto",
       heading: "Trabajemos Juntas",
       sub: "¿Tienes un proyecto en mente? Me encantaría saber más.",
       email: "Decir Hola",

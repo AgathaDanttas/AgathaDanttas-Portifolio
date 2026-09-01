@@ -1,6 +1,5 @@
-import React from "react";
 import type { Translation } from "../../types/translation";
-import Reveal from "./Reveal"; // Adjusted import case if needed
+import Reveal from "./Reveal";
 
 type SkillsProps = {
   t: Translation;
@@ -34,20 +33,6 @@ export default function Skills({ t }: SkillsProps) {
 
   return (
     <section id="skills" style={{ padding: "120px 0", position: "relative", overflow: "hidden" }}>
-      <div
-        style={{
-          position: "absolute",
-          bottom: "30%",
-          right: "5%",
-          width: 300,
-          height: 300,
-          borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(124,58,237,0.07) 0%, transparent 70%)",
-          filter: "blur(40px)",
-          pointerEvents: "none",
-        }}
-      />
-
       <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 5%", position: "relative", zIndex: 1 }}>
         <Reveal>
           <div className="text-center md:text-left flex flex-col items-center md:items-start">
