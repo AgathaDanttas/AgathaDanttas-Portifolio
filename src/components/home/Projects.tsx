@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import { ExternalLink, Github, FileText, Star, Lock } from "lucide-react";
 import ProjectCaseModal from "./ProjectCaseModal";
 import upaMockup from "../../assets/sim-upa-mockup.png";
+import erpLogin from "../../assets/refakt-erp-login.jpg";
 import type { ProjectItem, ProjectKey, Translation } from "../../types/translation";
 import { externalLinkProps } from "../../lib/links";
 
@@ -31,7 +32,7 @@ type ProjectMeta = {
 const projectMeta: Record<ProjectKey, ProjectMeta> = {
   "refakt-erp": {
     stack: ["Next.js", "TypeScript", "Node.js", "Prisma", "PostgreSQL"],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+    image: erpLogin,
     category: "ERP",
     inProduction: true,
   },
