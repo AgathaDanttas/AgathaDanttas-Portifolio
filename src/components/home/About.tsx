@@ -10,6 +10,35 @@ type AboutProps = {
 
 const differentialIcons = [Layers, Code2, Globe];
 
+function ProfilePhoto() {
+  return (
+    <div className="flex justify-center mb-8">
+      <div
+        style={{
+          padding: 3,
+          borderRadius: 24,
+          background: "linear-gradient(135deg, rgba(124,58,237,0.6), rgba(124,58,237,0.08))",
+          boxShadow: "0 8px 40px rgba(124,58,237,0.25)",
+        }}
+      >
+        <img
+          src={profilePhoto}
+          alt="Agatha Dantas"
+          width={220}
+          height={220}
+          style={{
+            display: "block",
+            width: 220,
+            height: 220,
+            objectFit: "cover",
+            borderRadius: 21,
+          }}
+        />
+      </div>
+    </div>
+  );
+}
+
 export default function About({ t }: AboutProps) {
   const differentials = t.about.differentials.map((label, i) => ({
     label,
@@ -59,6 +88,9 @@ export default function About({ t }: AboutProps) {
           }}
         >
           <div className="text-center md:text-left flex flex-col items-center md:items-start">
+            <Reveal className="md:hidden">
+              <ProfilePhoto />
+            </Reveal>
             {[t.about.p1, t.about.p2, t.about.p3, t.about.p4].map((p, index) => (
               <Reveal key={index} delay={index * 0.1}>
                 <p
@@ -76,31 +108,8 @@ export default function About({ t }: AboutProps) {
           </div>
 
           <div style={{ minWidth: 0 }}>
-            <Reveal>
-              <div className="flex justify-center mb-8">
-                <div
-                  style={{
-                    padding: 3,
-                    borderRadius: 24,
-                    background: "linear-gradient(135deg, rgba(124,58,237,0.6), rgba(124,58,237,0.08))",
-                    boxShadow: "0 8px 40px rgba(124,58,237,0.25)",
-                  }}
-                >
-                  <img
-                    src={profilePhoto}
-                    alt="Agatha Dantas"
-                    width={220}
-                    height={220}
-                    style={{
-                      display: "block",
-                      width: 220,
-                      height: 220,
-                      objectFit: "cover",
-                      borderRadius: 21,
-                    }}
-                  />
-                </div>
-              </div>
+            <Reveal className="hidden md:block">
+              <ProfilePhoto />
             </Reveal>
 
             <div className="space-y-3 mb-10 flex flex-col gap-3">
