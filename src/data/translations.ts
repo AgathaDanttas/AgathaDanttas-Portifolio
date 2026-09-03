@@ -20,9 +20,9 @@ export const translations: Record<Language, Translation> = {
     },
     about: {
       heading: "Onde design encontra engenharia",
-      p1: "Sou Desenvolvedora Web e estudante de Engenharia de Software, com foco em construir aplicações modernas, bem estruturadas e pensadas para o usuário.",
-      p2: "Atuo na interseção entre design e engenharia, transformando ideias em soluções digitais funcionais, elegantes e escaláveis. Mais do que fazer interfaces bonitas, me preocupo com a qualidade do código, organização do projeto e a experiência real de quem utiliza o sistema.",
-      p3: "Tenho experiência em desenvolvimento full-stack e estou em constante evolução, aprofundando meus conhecimentos em arquitetura de software, back-end e boas práticas de desenvolvimento.",
+      p1: "Sou Desenvolvedora Web e estudante de Engenharia de Software. À frente da Refakt, desenvolvo um ERP corporativo que está em produção, cuidando do dia a dia de RH e Financeiro de um cliente real.",
+      p2: "Atuo na interseção entre design e engenharia: do modelo de dados à interface, transformo processos de negócio em soluções digitais funcionais, elegantes e escaláveis — com atenção à qualidade do código e à experiência de quem usa o sistema todos os dias.",
+      p3: "Tenho experiência em desenvolvimento full-stack e, no ERP, enfrento desafios como arquitetura multi-tenant, controle de acesso por perfis e regras de negócio reais — sempre aprofundando meus conhecimentos em arquitetura de software e back-end.",
       p4: "Quando não estou programando, gosto de explorar novas tendências de design, estudar tecnologia e experimentar ideias criativas em projetos pessoais.",
       differentials: [
         "Foco em desenvolvimento full-stack",
@@ -225,9 +225,9 @@ export const translations: Record<Language, Translation> = {
     },
     about: {
       heading: "Where design meets engineering",
-      p1: "I'm a Web Developer and Software Engineering student, focusing on building modern, well-structured, and user-centric applications.",
-      p2: "I operate at the intersection of design and engineering, transforming ideas into functional, elegant, and scalable digital solutions. More than making beautiful interfaces, I care about code quality, project organization, and the real experience of those who use the system.",
-      p3: "I have experience in full-stack development and am constantly evolving, deepening my knowledge in software architecture, back-end, and development best practices.",
+      p1: "I'm a Web Developer and Software Engineering student. At Refakt, I build a corporate ERP that runs in production, handling the day-to-day HR and finance operations of a real client.",
+      p2: "I work at the intersection of design and engineering: from the data model to the interface, I turn business processes into functional, elegant, and scalable digital solutions — caring about code quality and the experience of the people who use the system every day.",
+      p3: "I have full-stack experience and, on the ERP, I take on challenges like multi-tenant architecture, role-based access control, and real business rules — always deepening my knowledge of software architecture and back-end development.",
       p4: "When I'm not coding, I like to explore design trends, study technology, and experiment with creative ideas in personal projects.",
       differentials: [
         "Focus on full-stack development",
@@ -430,9 +430,9 @@ export const translations: Record<Language, Translation> = {
     },
     about: {
       heading: "Où le design rencontre l'ingénierie",
-      p1: "Je suis développeuse Web et étudiante en ingénierie logicielle, avec pour objectif de créer des applications modernes, bien structurées et centrées sur l'utilisateur.",
-      p2: "J'opère à l'intersection du design et de l'ingénierie, en transformant les idées en solutions numériques fonctionnelles, élégantes et évolutives. Au-delà de créer de belles interfaces, je me soucie de la qualité du code, de l'organisation du projet et de l'expérience réelle des utilisateurs du système.",
-      p3: "J'ai de l'expérience dans le développement full-stack et je suis en constante évolution, approfondissant mes connaissances en architecture logicielle, back-end et meilleures pratiques de développement.",
+      p1: "Je suis développeuse Web et étudiante en ingénierie logicielle. Chez Refakt, je développe un ERP d'entreprise en production, qui gère au quotidien les opérations RH et financières d'un client réel.",
+      p2: "Je travaille à l'intersection du design et de l'ingénierie : du modèle de données à l'interface, je transforme des processus métier en solutions numériques fonctionnelles, élégantes et évolutives — avec une attention à la qualité du code et à l'expérience de ceux qui utilisent le système au quotidien.",
+      p3: "J'ai de l'expérience en développement full-stack et, sur l'ERP, je relève des défis comme l'architecture multi-tenant, le contrôle d'accès par rôles et des règles métier réelles — en approfondissant sans cesse mes connaissances en architecture logicielle et back-end.",
       p4: "Quand je ne programme pas, j'aime explorer les nouvelles tendances en matière de design, étudier la technologie et expérimenter des idées créatives dans des projets personnels.",
       differentials: [
         "Accent sur le développement full-stack",
@@ -635,9 +635,9 @@ export const translations: Record<Language, Translation> = {
     },
     about: {
       heading: "Donde el diseño encuentra la ingeniería",
-      p1: "Soy Desarrolladora Web y estudiante de Ingeniería de Software, enfocada en construir aplicaciones modernas, bien estructuradas y pensadas para el usuario.",
-      p2: "Trabajo en la intersección entre el diseño y la ingeniería, transformando ideas en soluciones digitales funcionales, elegantes y escalables. Más que hacer interfaces bonitas, me preocupo por la calidad del código, la organización del proyecto y la experiencia real de quienes utilizan el sistema.",
-      p3: "Tengo experiencia en desarrollo full-stack y estoy en constante evolución, profundizando mis conocimientos en arquitectura de software, back-end y buenas prácticas de desarrollo.",
+      p1: "Soy Desarrolladora Web y estudiante de Ingeniería de Software. Al frente de Refakt, desarrollo un ERP corporativo que está en producción, atendiendo el día a día de RRHH y Finanzas de un cliente real.",
+      p2: "Trabajo en la intersección entre el diseño y la ingeniería: del modelo de datos a la interfaz, transformo procesos de negocio en soluciones digitales funcionales, elegantes y escalables — cuidando la calidad del código y la experiencia de quienes usan el sistema todos los días.",
+      p3: "Tengo experiencia en desarrollo full-stack y, en el ERP, enfrento desafíos como arquitectura multi-tenant, control de acceso por roles y reglas de negocio reales — profundizando siempre en arquitectura de software y back-end.",
       p4: "Cuando no estoy programando, me gusta explorar nuevas tendencias de diseño, estudiar tecnología y experimentar con ideas creativas en proyectos personales.",
       differentials: [
         "Enfoque en desarrollo full-stack",

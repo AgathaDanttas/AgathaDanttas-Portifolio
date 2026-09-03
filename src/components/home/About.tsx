@@ -2,6 +2,7 @@ import type { Translation } from "../../types/translation";
 import Reveal from "./Reveal";
 import { motion } from "framer-motion";
 import { Layers, Code2, Globe } from "lucide-react";
+import profilePhoto from "../../assets/agatha-dantas.jpg";
 
 type AboutProps = {
   t: Translation;
@@ -75,6 +76,33 @@ export default function About({ t }: AboutProps) {
           </div>
 
           <div style={{ minWidth: 0 }}>
+            <Reveal>
+              <div className="flex justify-center md:justify-start mb-8">
+                <div
+                  style={{
+                    padding: 3,
+                    borderRadius: 24,
+                    background: "linear-gradient(135deg, rgba(124,58,237,0.6), rgba(124,58,237,0.08))",
+                    boxShadow: "0 8px 40px rgba(124,58,237,0.25)",
+                  }}
+                >
+                  <img
+                    src={profilePhoto}
+                    alt="Agatha Dantas"
+                    width={220}
+                    height={220}
+                    style={{
+                      display: "block",
+                      width: 220,
+                      height: 220,
+                      objectFit: "cover",
+                      borderRadius: 21,
+                    }}
+                  />
+                </div>
+              </div>
+            </Reveal>
+
             <div className="space-y-3 mb-10 flex flex-col gap-3">
               {differentials.map(({ icon: Icon, label }, i) => (
                 <motion.div
