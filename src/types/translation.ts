@@ -75,6 +75,9 @@ export type Translation = {
     educationHeading: string;
     work: { role: string; company: string; period: string; highlights: string[] }[];
     education: { degree: string; school: string; period: string; desc: string }[];
+    certificationsHeading: string;
+    credentialLabel: string;
+    certifications: { title: string; issuer: string; year: string; url?: string }[];
   };
   mindset: {
     label: string;

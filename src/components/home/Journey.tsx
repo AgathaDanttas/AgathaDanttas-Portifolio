@@ -1,9 +1,12 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Briefcase, GraduationCap } from "lucide-react";
+import { Briefcase, GraduationCap, Award, ExternalLink, Image as ImageIcon } from "lucide-react";
 import type { Translation } from "../../types/translation";
+import { externalLinkProps } from "../../lib/links";
 
 type JourneyProps = { t: Translation };
+
+const certImages: (string | undefined)[] = [undefined, undefined, undefined];
 
 function TimelineCard({
   title,
@@ -110,6 +113,54 @@ export default function Journey({ t }: JourneyProps) {
                 />
               ))}
             </div>
+          </div>
+        </div>
+
+        <div className="mt-20">
+          <div className="flex items-center gap-2.5 mb-8">
+            <div className="w-8 h-8 rounded-lg bg-purple-600/10 border border-purple-500/20 flex items-center justify-center">
+              <Award size={14} className="text-purple-400" />
+            </div>
+            <h3 className="text-white font-semibold text-base">{t.journey.certificationsHeading}</h3>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {t.journey.certifications.map((cert, i) => (
+              <motion.div
+                key={cert.title}
+                initial={{ opacity: 0, y: 30 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 0.2 + i * 0.1, duration: 0.5 }}
+                className="rounded-2xl bg-white/3 border border-white/8 hover:border-purple-500/40 overflow-hidden transition-all duration-300 flex flex-col"
+              >
+                <div className="h-36 bg-purple-900/10 border-b border-white/5 flex items-center justify-center">
+                  {certImages[i] ? (
+                    <img src={certImages[i]} alt={cert.title} className="w-full h-full object-cover" />
+                  ) : (
+                    <div className="flex flex-col items-center gap-2 text-purple-400/40">
+                      <ImageIcon size={28} />
+                      <span className="text-[10px] font-mono tracking-widest uppercase">{cert.issuer}</span>
+                    </div>
+                  )}
+                </div>
+
+                <div className="p-5 flex flex-col flex-1">
+                  <h4 className="font-semibold text-white text-sm mb-1">{cert.title}</h4>
+                  <p className="text-purple-400/80 text-xs font-mono mb-4">
+                    {cert.issuer} · {cert.year}
+                  </p>
+                  {cert.url && (
+                    <a
+                      href={cert.url}
+                      {...externalLinkProps(cert.url)}
+                      className="mt-auto inline-flex items-center gap-1.5 text-xs text-white/60 hover:text-purple-300 transition-colors"
+                    >
+                      <ExternalLink size={13} /> {t.journey.credentialLabel}
+                    </a>
+                  )}
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>

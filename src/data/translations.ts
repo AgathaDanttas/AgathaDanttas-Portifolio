@@ -197,6 +197,13 @@ export const translations: Record<Language, Translation> = {
           desc: "Programação, bancos de dados, APIs, Git/GitHub e metodologias ágeis aplicadas em projetos práticos de desenvolvimento web.",
         },
       ],
+      certificationsHeading: "Certificações",
+      credentialLabel: "Ver credencial",
+      certifications: [
+        { title: "Google UX Design", issuer: "Coursera", year: "2024", url: "#" },
+        { title: "React Avançado", issuer: "Alura", year: "2023", url: "#" },
+        { title: "Fundamentos de Bancos de Dados", issuer: "SENAI", year: "2024", url: "#" },
+      ],
     },
     mindset: {
       label: "Mentalidade",
@@ -442,6 +449,13 @@ export const translations: Record<Language, Translation> = {
           period: "Jul 2023 – Aug 2025",
           desc: "Programming, databases, APIs, Git/GitHub, and agile methodologies applied to hands-on web development projects.",
         },
+      ],
+      certificationsHeading: "Certifications",
+      credentialLabel: "View credential",
+      certifications: [
+        { title: "Google UX Design", issuer: "Coursera", year: "2024", url: "#" },
+        { title: "Advanced React", issuer: "Alura", year: "2023", url: "#" },
+        { title: "Database Fundamentals", issuer: "SENAI", year: "2024", url: "#" },
       ],
     },
     mindset: {
@@ -689,6 +703,13 @@ export const translations: Record<Language, Translation> = {
           desc: "Programmation, bases de données, API, Git/GitHub et méthodologies agiles appliquées à des projets pratiques de développement web.",
         },
       ],
+      certificationsHeading: "Certifications",
+      credentialLabel: "Voir la certification",
+      certifications: [
+        { title: "Google UX Design", issuer: "Coursera", year: "2024", url: "#" },
+        { title: "React Avancé", issuer: "Alura", year: "2023", url: "#" },
+        { title: "Fondamentaux des Bases de Données", issuer: "SENAI", year: "2024", url: "#" },
+      ],
     },
     mindset: {
       label: "État d'esprit",
@@ -934,6 +955,13 @@ export const translations: Record<Language, Translation> = {
           period: "Jul 2023 – Ago 2025",
           desc: "Programación, bases de datos, APIs, Git/GitHub y metodologías ágiles aplicadas en proyectos prácticos de desarrollo web.",
         },
+      ],
+      certificationsHeading: "Certificaciones",
+      credentialLabel: "Ver credencial",
+      certifications: [
+        { title: "Google UX Design", issuer: "Coursera", year: "2024", url: "#" },
+        { title: "React Avanzado", issuer: "Alura", year: "2023", url: "#" },
+        { title: "Fundamentos de Bases de Datos", issuer: "SENAI", year: "2024", url: "#" },
       ],
     },
     mindset: {
