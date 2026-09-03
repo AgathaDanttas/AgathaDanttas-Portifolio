@@ -108,7 +108,7 @@ export default function About({ t }: AboutProps) {
           </div>
 
           <div style={{ minWidth: 0 }}>
-            <Reveal className="hidden md:block md:-mt-20">
+            <Reveal className="hidden md:block md:-mt-32">
               <ProfilePhoto />
             </Reveal>
 
