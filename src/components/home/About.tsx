@@ -77,7 +77,7 @@ export default function About({ t }: AboutProps) {
 
           <div style={{ minWidth: 0 }}>
             <Reveal>
-              <div className="flex justify-center md:justify-start mb-8">
+              <div className="flex justify-center mb-8">
                 <div
                   style={{
                     padding: 3,
