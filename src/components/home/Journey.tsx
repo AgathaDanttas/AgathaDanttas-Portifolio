@@ -6,6 +6,8 @@ import { externalLinkProps } from "../../lib/links";
 
 type JourneyProps = { t: Translation };
 
+const SHOW_CERTIFICATIONS = false;
+
 const certImages: (string | undefined)[] = [undefined, undefined, undefined];
 
 function TimelineCard({
@@ -116,6 +118,7 @@ export default function Journey({ t }: JourneyProps) {
           </div>
         </div>
 
+        {SHOW_CERTIFICATIONS && (
         <div className="mt-20">
           <div className="flex items-center gap-2.5 mb-8">
             <div className="w-8 h-8 rounded-lg bg-purple-600/10 border border-purple-500/20 flex items-center justify-center">
@@ -163,6 +166,7 @@ export default function Journey({ t }: JourneyProps) {
             ))}
           </div>
         </div>
+        )}
       </div>
     </section>
   );
