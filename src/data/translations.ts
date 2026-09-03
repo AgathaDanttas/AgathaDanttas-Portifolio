@@ -157,6 +157,47 @@ export const translations: Record<Language, Translation> = {
         },
       ],
     },
+    journey: {
+      label: "Trajetória",
+      heading: "Experiência & Formação",
+      workHeading: "Experiência Profissional",
+      educationHeading: "Formação Acadêmica",
+      work: [
+        {
+          role: "Desenvolvedora Full-Stack",
+          company: "CariotecaLabs",
+          period: "Out 2024 – Atual",
+          highlights: [
+            "Interfaces responsivas com React e Tailwind CSS, reduzindo o tempo médio de carregamento das páginas em até 30%.",
+            "Integração de APIs REST entre o site e o aplicativo, reduzindo falhas de sincronização de dados.",
+            "Refatoração de componentes reutilizáveis, reduzindo duplicação de código e facilitando a manutenção.",
+          ],
+        },
+        {
+          role: "Aprendiz em Informática",
+          company: "Rede Sarah de Hospitais de Reabilitação",
+          period: "Nov 2023 – Nov 2025",
+          highlights: [
+            "Suporte técnico a colaboradores e pacientes em sistemas internos e equipamentos.",
+            "Manutenção preventiva e corretiva de computadores, impressoras e totens de atendimento.",
+          ],
+        },
+      ],
+      education: [
+        {
+          degree: "Bacharelado em Engenharia de Software",
+          school: "Universidade Católica do Salvador",
+          period: "Ago 2025 – em andamento",
+          desc: "Foco em requisitos, modelagem, arquitetura de software, programação, bancos de dados e sistemas escaláveis.",
+        },
+        {
+          degree: "Técnico em Desenvolvimento de Sistemas",
+          school: "SENAI Dendezeiros",
+          period: "Jul 2023 – Ago 2025",
+          desc: "Programação, bancos de dados, APIs, Git/GitHub e metodologias ágeis aplicadas em projetos práticos de desenvolvimento web.",
+        },
+      ],
+    },
     mindset: {
       label: "Mentalidade",
       heading: "Como eu penso no desenvolvimento",
@@ -359,6 +400,47 @@ export const translations: Record<Language, Translation> = {
               "Advanced analytics dashboard for shift planning and resource allocation.",
             ],
           },
+        },
+      ],
+    },
+    journey: {
+      label: "Journey",
+      heading: "Experience & Education",
+      workHeading: "Professional Experience",
+      educationHeading: "Education",
+      work: [
+        {
+          role: "Full-Stack Developer",
+          company: "CariotecaLabs",
+          period: "Oct 2024 – Present",
+          highlights: [
+            "Responsive interfaces with React and Tailwind CSS, cutting average page load time by up to 30%.",
+            "REST API integration between the website and the mobile app, reducing data synchronization failures.",
+            "Refactored reusable components, reducing code duplication and improving maintainability.",
+          ],
+        },
+        {
+          role: "IT Apprentice",
+          company: "Sarah Network of Rehabilitation Hospitals",
+          period: "Nov 2023 – Nov 2025",
+          highlights: [
+            "Technical support for staff and patients across internal systems and equipment.",
+            "Preventive and corrective maintenance of computers, printers, and self-service kiosks.",
+          ],
+        },
+      ],
+      education: [
+        {
+          degree: "B.Sc. in Software Engineering",
+          school: "Universidade Católica do Salvador",
+          period: "Aug 2025 – present",
+          desc: "Focus on requirements, modeling, software architecture, programming, databases, and scalable systems.",
+        },
+        {
+          degree: "Technical Degree in Systems Development",
+          school: "SENAI Dendezeiros",
+          period: "Jul 2023 – Aug 2025",
+          desc: "Programming, databases, APIs, Git/GitHub, and agile methodologies applied to hands-on web development projects.",
         },
       ],
     },
@@ -567,6 +649,47 @@ export const translations: Record<Language, Translation> = {
         },
       ],
     },
+    journey: {
+      label: "Parcours",
+      heading: "Expérience & Formation",
+      workHeading: "Expérience Professionnelle",
+      educationHeading: "Formation Académique",
+      work: [
+        {
+          role: "Développeuse Full-Stack",
+          company: "CariotecaLabs",
+          period: "Oct. 2024 – Aujourd'hui",
+          highlights: [
+            "Interfaces responsives avec React et Tailwind CSS, réduisant le temps de chargement moyen des pages jusqu'à 30%.",
+            "Intégration d'API REST entre le site et l'application mobile, réduisant les échecs de synchronisation des données.",
+            "Refactorisation de composants réutilisables, réduisant la duplication de code et facilitant la maintenance.",
+          ],
+        },
+        {
+          role: "Apprentie en Informatique",
+          company: "Réseau Sarah d'Hôpitaux de Réadaptation",
+          period: "Nov. 2023 – Nov. 2025",
+          highlights: [
+            "Support technique aux collaborateurs et aux patients sur les systèmes internes et les équipements.",
+            "Maintenance préventive et corrective d'ordinateurs, d'imprimantes et de bornes libre-service.",
+          ],
+        },
+      ],
+      education: [
+        {
+          degree: "Licence en Génie Logiciel",
+          school: "Universidade Católica do Salvador",
+          period: "Août 2025 – en cours",
+          desc: "Axée sur les exigences, la modélisation, l'architecture logicielle, la programmation, les bases de données et les systèmes évolutifs.",
+        },
+        {
+          degree: "Diplôme Technique en Développement de Systèmes",
+          school: "SENAI Dendezeiros",
+          period: "Juil. 2023 – Août 2025",
+          desc: "Programmation, bases de données, API, Git/GitHub et méthodologies agiles appliquées à des projets pratiques de développement web.",
+        },
+      ],
+    },
     mindset: {
       label: "État d'esprit",
       heading: "Ma façon de penser le développement",
@@ -769,6 +892,47 @@ export const translations: Record<Language, Translation> = {
               "Dashboard analítico avanzado para planificación de turnos y asignación de recursos.",
             ],
           },
+        },
+      ],
+    },
+    journey: {
+      label: "Trayectoria",
+      heading: "Experiencia & Formación",
+      workHeading: "Experiencia Profesional",
+      educationHeading: "Formación Académica",
+      work: [
+        {
+          role: "Desarrolladora Full-Stack",
+          company: "CariotecaLabs",
+          period: "Oct 2024 – Actualidad",
+          highlights: [
+            "Interfaces responsivas con React y Tailwind CSS, reduciendo el tiempo medio de carga de las páginas hasta un 30%.",
+            "Integración de APIs REST entre el sitio y la aplicación móvil, reduciendo fallas de sincronización de datos.",
+            "Refactorización de componentes reutilizables, reduciendo la duplicación de código y facilitando el mantenimiento.",
+          ],
+        },
+        {
+          role: "Aprendiz de Informática",
+          company: "Red Sarah de Hospitales de Rehabilitación",
+          period: "Nov 2023 – Nov 2025",
+          highlights: [
+            "Soporte técnico a colaboradores y pacientes en sistemas internos y equipos.",
+            "Mantenimiento preventivo y correctivo de computadoras, impresoras y tótems de autoservicio.",
+          ],
+        },
+      ],
+      education: [
+        {
+          degree: "Grado en Ingeniería de Software",
+          school: "Universidade Católica do Salvador",
+          period: "Ago 2025 – en curso",
+          desc: "Enfoque en requisitos, modelado, arquitectura de software, programación, bases de datos y sistemas escalables.",
+        },
+        {
+          degree: "Técnico en Desarrollo de Sistemas",
+          school: "SENAI Dendezeiros",
+          period: "Jul 2023 – Ago 2025",
+          desc: "Programación, bases de datos, APIs, Git/GitHub y metodologías ágiles aplicadas en proyectos prácticos de desarrollo web.",
         },
       ],
     },

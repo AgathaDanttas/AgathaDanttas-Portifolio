@@ -68,6 +68,14 @@ export type Translation = {
     futureLabel: string;
     items: ProjectItem[];
   };
+  journey: {
+    label: string;
+    heading: string;
+    workHeading: string;
+    educationHeading: string;
+    work: { role: string; company: string; period: string; highlights: string[] }[];
+    education: { degree: string; school: string; period: string; desc: string }[];
+  };
   mindset: {
     label: string;
     heading: string;
