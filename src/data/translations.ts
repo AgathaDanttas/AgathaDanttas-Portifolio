@@ -197,6 +197,8 @@ export const translations: Record<Language, Translation> = {
           desc: "Programação, bancos de dados, APIs, Git/GitHub e metodologias ágeis aplicadas em projetos práticos de desenvolvimento web.",
         },
       ],
+      learnMore: "Saber mais",
+      showLess: "Mostrar menos",
       certificationsHeading: "Certificações",
       credentialLabel: "Ver credencial",
       certifications: [
@@ -450,6 +452,8 @@ export const translations: Record<Language, Translation> = {
           desc: "Programming, databases, APIs, Git/GitHub, and agile methodologies applied to hands-on web development projects.",
         },
       ],
+      learnMore: "Learn more",
+      showLess: "Show less",
       certificationsHeading: "Certifications",
       credentialLabel: "View credential",
       certifications: [
@@ -703,6 +707,8 @@ export const translations: Record<Language, Translation> = {
           desc: "Programmation, bases de données, API, Git/GitHub et méthodologies agiles appliquées à des projets pratiques de développement web.",
         },
       ],
+      learnMore: "En savoir plus",
+      showLess: "Voir moins",
       certificationsHeading: "Certifications",
       credentialLabel: "Voir la certification",
       certifications: [
@@ -956,6 +962,8 @@ export const translations: Record<Language, Translation> = {
           desc: "Programación, bases de datos, APIs, Git/GitHub y metodologías ágiles aplicadas en proyectos prácticos de desarrollo web.",
         },
       ],
+      learnMore: "Saber más",
+      showLess: "Mostrar menos",
       certificationsHeading: "Certificaciones",
       credentialLabel: "Ver credencial",
       certifications: [

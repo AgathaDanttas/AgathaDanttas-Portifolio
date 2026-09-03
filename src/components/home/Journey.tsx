@@ -1,6 +1,6 @@
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import { Briefcase, GraduationCap, Award, ExternalLink, Image as ImageIcon } from "lucide-react";
+import { AnimatePresence, motion, useInView } from "framer-motion";
+import { useRef, useState } from "react";
+import { Briefcase, GraduationCap, Award, ExternalLink, Image as ImageIcon, ChevronDown } from "lucide-react";
 import type { Translation } from "../../types/translation";
 import { externalLinkProps } from "../../lib/links";
 
@@ -17,6 +17,8 @@ function TimelineCard({
   lines,
   index,
   inView,
+  learnMore,
+  showLess,
 }: {
   title: string;
   subtitle: string;
@@ -24,7 +26,11 @@ function TimelineCard({
   lines: string[];
   index: number;
   inView: boolean;
+  learnMore: string;
+  showLess: string;
 }) {
+  const [open, setOpen] = useState(false);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -39,15 +45,40 @@ function TimelineCard({
           <h4 className="font-semibold text-white text-sm">{title}</h4>
           <span className="text-[11px] font-mono text-purple-300">{period}</span>
         </div>
-        <p className="text-purple-400/80 text-xs font-mono mb-3">{subtitle}</p>
-        <ul className="space-y-1.5">
-          {lines.map((line, i) => (
-            <li key={i} className="flex items-start gap-2 text-[13px] text-white/55 leading-relaxed">
-              <span className="w-1 h-1 rounded-full bg-purple-500/60 mt-2 shrink-0" />
-              {line}
-            </li>
-          ))}
-        </ul>
+        <p className="text-purple-400/80 text-xs font-mono">{subtitle}</p>
+
+        <AnimatePresence initial={false}>
+          {open && (
+            <motion.ul
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="space-y-1.5 overflow-hidden"
+            >
+              {lines.map((line, i) => (
+                <li
+                  key={i}
+                  className={`flex items-start gap-2 text-[13px] text-white/55 leading-relaxed ${i === 0 ? "pt-3" : ""}`}
+                >
+                  <span className="w-1 h-1 rounded-full bg-purple-500/60 mt-2 shrink-0" />
+                  {line}
+                </li>
+              ))}
+            </motion.ul>
+          )}
+        </AnimatePresence>
+
+        <button
+          onClick={() => setOpen((prev) => !prev)}
+          className="mt-3 inline-flex items-center gap-1.5 text-xs text-purple-300/80 hover:text-purple-300 transition-colors"
+        >
+          <ChevronDown
+            size={13}
+            className={`transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+          />
+          {open ? showLess : learnMore}
+        </button>
       </div>
     </motion.div>
   );
@@ -90,6 +121,8 @@ export default function Journey({ t }: JourneyProps) {
                   lines={job.highlights}
                   index={i}
                   inView={inView}
+                  learnMore={t.journey.learnMore}
+                  showLess={t.journey.showLess}
                 />
               ))}
             </div>
@@ -112,6 +145,8 @@ export default function Journey({ t }: JourneyProps) {
                   lines={[edu.desc]}
                   index={i}
                   inView={inView}
+                  learnMore={t.journey.learnMore}
+                  showLess={t.journey.showLess}
                 />
               ))}
             </div>
