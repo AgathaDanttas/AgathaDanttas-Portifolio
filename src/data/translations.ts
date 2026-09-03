@@ -20,9 +20,9 @@ export const translations: Record<Language, Translation> = {
     },
     about: {
       heading: "Onde design encontra engenharia",
-      p1: "Sou Desenvolvedora Web e estudante de Engenharia de Software, com foco em construir aplicações modernas, bem estruturadas e pensadas para o usuário.",
-      p2: "Atuo na interseção entre design e engenharia, transformando ideias em soluções digitais funcionais, elegantes e escaláveis. Mais do que fazer interfaces bonitas, me preocupo com a qualidade do código, organização do projeto e a experiência real de quem utiliza o sistema.",
-      p3: "Tenho experiência em desenvolvimento full-stack e estou em constante evolução, aprofundando meus conhecimentos em arquitetura de software, back-end e boas práticas de desenvolvimento.",
+      p1: "Sou Desenvolvedora Web e estudante de Engenharia de Software. À frente da Refakt, desenvolvo um ERP corporativo que está em produção, cuidando do dia a dia de RH e Financeiro de um cliente real.",
+      p2: "Atuo na interseção entre design e engenharia: do modelo de dados à interface, transformo processos de negócio em soluções digitais funcionais, elegantes e escaláveis, com atenção à qualidade do código e à experiência de quem usa o sistema todos os dias.",
+      p3: "Tenho experiência em desenvolvimento full-stack e, no ERP, enfrento desafios como arquitetura multi-tenant, controle de acesso por perfis e regras de negócio reais. Sigo me aprofundando em arquitetura de software, back-end e dados.",
       p4: "Quando não estou programando, gosto de explorar novas tendências de design, estudar tecnologia e experimentar ideias criativas em projetos pessoais.",
       differentials: [
         "Foco em desenvolvimento full-stack",
@@ -157,6 +157,56 @@ export const translations: Record<Language, Translation> = {
         },
       ],
     },
+    journey: {
+      label: "Trajetória",
+      heading: "Experiência & Formação",
+      workHeading: "Experiência Profissional",
+      educationHeading: "Formação Acadêmica",
+      work: [
+        {
+          role: "Desenvolvedora Full-Stack",
+          company: "CariotecaLabs",
+          period: "Out 2024 – Atual",
+          highlights: [
+            "Interfaces responsivas com React e Tailwind CSS, reduzindo o tempo médio de carregamento das páginas em até 30%.",
+            "Integração de APIs REST entre o site e o aplicativo, reduzindo falhas de sincronização de dados.",
+            "Refatoração de componentes reutilizáveis, reduzindo duplicação de código e facilitando a manutenção.",
+          ],
+        },
+        {
+          role: "Aprendiz em Informática",
+          company: "Rede Sarah de Hospitais de Reabilitação",
+          period: "Nov 2023 – Nov 2025",
+          highlights: [
+            "Suporte técnico a colaboradores e pacientes em sistemas internos e equipamentos.",
+            "Manutenção preventiva e corretiva de computadores, impressoras e totens de atendimento.",
+          ],
+        },
+      ],
+      education: [
+        {
+          degree: "Bacharelado em Engenharia de Software",
+          school: "Universidade Católica do Salvador",
+          period: "Ago 2025 – em andamento",
+          desc: "Foco em requisitos, modelagem, arquitetura de software, programação, bancos de dados e sistemas escaláveis.",
+        },
+        {
+          degree: "Técnico em Desenvolvimento de Sistemas",
+          school: "SENAI Dendezeiros",
+          period: "Jul 2023 – Ago 2025",
+          desc: "Programação, bancos de dados, APIs, Git/GitHub e metodologias ágeis aplicadas em projetos práticos de desenvolvimento web.",
+        },
+      ],
+      learnMore: "Saber mais",
+      showLess: "Mostrar menos",
+      certificationsHeading: "Certificações",
+      credentialLabel: "Ver credencial",
+      certifications: [
+        { title: "Google UX Design", issuer: "Coursera", year: "2024", url: "#" },
+        { title: "React Avançado", issuer: "Alura", year: "2023", url: "#" },
+        { title: "Fundamentos de Bancos de Dados", issuer: "SENAI", year: "2024", url: "#" },
+      ],
+    },
     mindset: {
       label: "Mentalidade",
       heading: "Como eu penso no desenvolvimento",
@@ -225,9 +275,9 @@ export const translations: Record<Language, Translation> = {
     },
     about: {
       heading: "Where design meets engineering",
-      p1: "I'm a Web Developer and Software Engineering student, focusing on building modern, well-structured, and user-centric applications.",
-      p2: "I operate at the intersection of design and engineering, transforming ideas into functional, elegant, and scalable digital solutions. More than making beautiful interfaces, I care about code quality, project organization, and the real experience of those who use the system.",
-      p3: "I have experience in full-stack development and am constantly evolving, deepening my knowledge in software architecture, back-end, and development best practices.",
+      p1: "I'm a Web Developer and Software Engineering student. At Refakt, I build a corporate ERP that runs in production, handling the day-to-day HR and finance operations of a real client.",
+      p2: "I work at the intersection of design and engineering: from the data model to the interface, I turn business processes into functional, elegant, and scalable digital solutions, caring about code quality and the experience of the people who use the system every day.",
+      p3: "I have full-stack experience and, on the ERP, I take on challenges like multi-tenant architecture, role-based access control, and real business rules. I keep deepening my knowledge of software architecture, back-end development, and data.",
       p4: "When I'm not coding, I like to explore design trends, study technology, and experiment with creative ideas in personal projects.",
       differentials: [
         "Focus on full-stack development",
@@ -362,6 +412,56 @@ export const translations: Record<Language, Translation> = {
         },
       ],
     },
+    journey: {
+      label: "Journey",
+      heading: "Experience & Education",
+      workHeading: "Professional Experience",
+      educationHeading: "Education",
+      work: [
+        {
+          role: "Full-Stack Developer",
+          company: "CariotecaLabs",
+          period: "Oct 2024 – Present",
+          highlights: [
+            "Responsive interfaces with React and Tailwind CSS, cutting average page load time by up to 30%.",
+            "REST API integration between the website and the mobile app, reducing data synchronization failures.",
+            "Refactored reusable components, reducing code duplication and improving maintainability.",
+          ],
+        },
+        {
+          role: "IT Apprentice",
+          company: "Sarah Network of Rehabilitation Hospitals",
+          period: "Nov 2023 – Nov 2025",
+          highlights: [
+            "Technical support for staff and patients across internal systems and equipment.",
+            "Preventive and corrective maintenance of computers, printers, and self-service kiosks.",
+          ],
+        },
+      ],
+      education: [
+        {
+          degree: "B.Sc. in Software Engineering",
+          school: "Universidade Católica do Salvador",
+          period: "Aug 2025 – present",
+          desc: "Focus on requirements, modeling, software architecture, programming, databases, and scalable systems.",
+        },
+        {
+          degree: "Technical Degree in Systems Development",
+          school: "SENAI Dendezeiros",
+          period: "Jul 2023 – Aug 2025",
+          desc: "Programming, databases, APIs, Git/GitHub, and agile methodologies applied to hands-on web development projects.",
+        },
+      ],
+      learnMore: "Learn more",
+      showLess: "Show less",
+      certificationsHeading: "Certifications",
+      credentialLabel: "View credential",
+      certifications: [
+        { title: "Google UX Design", issuer: "Coursera", year: "2024", url: "#" },
+        { title: "Advanced React", issuer: "Alura", year: "2023", url: "#" },
+        { title: "Database Fundamentals", issuer: "SENAI", year: "2024", url: "#" },
+      ],
+    },
     mindset: {
       label: "Mindset",
       heading: "How I think about development",
@@ -430,9 +530,9 @@ export const translations: Record<Language, Translation> = {
     },
     about: {
       heading: "Où le design rencontre l'ingénierie",
-      p1: "Je suis développeuse Web et étudiante en ingénierie logicielle, avec pour objectif de créer des applications modernes, bien structurées et centrées sur l'utilisateur.",
-      p2: "J'opère à l'intersection du design et de l'ingénierie, en transformant les idées en solutions numériques fonctionnelles, élégantes et évolutives. Au-delà de créer de belles interfaces, je me soucie de la qualité du code, de l'organisation du projet et de l'expérience réelle des utilisateurs du système.",
-      p3: "J'ai de l'expérience dans le développement full-stack et je suis en constante évolution, approfondissant mes connaissances en architecture logicielle, back-end et meilleures pratiques de développement.",
+      p1: "Je suis développeuse Web et étudiante en ingénierie logicielle. Chez Refakt, je développe un ERP d'entreprise en production, qui gère au quotidien les opérations RH et financières d'un client réel.",
+      p2: "Je travaille à l'intersection du design et de l'ingénierie : du modèle de données à l'interface, je transforme des processus métier en solutions numériques fonctionnelles, élégantes et évolutives, avec une attention à la qualité du code et à l'expérience de ceux qui utilisent le système au quotidien.",
+      p3: "J'ai de l'expérience en développement full-stack et, sur l'ERP, je relève des défis comme l'architecture multi-tenant, le contrôle d'accès par rôles et des règles métier réelles. Je continue d'approfondir mes connaissances en architecture logicielle, back-end et données.",
       p4: "Quand je ne programme pas, j'aime explorer les nouvelles tendances en matière de design, étudier la technologie et expérimenter des idées créatives dans des projets personnels.",
       differentials: [
         "Accent sur le développement full-stack",
@@ -567,6 +667,56 @@ export const translations: Record<Language, Translation> = {
         },
       ],
     },
+    journey: {
+      label: "Parcours",
+      heading: "Expérience & Formation",
+      workHeading: "Expérience Professionnelle",
+      educationHeading: "Formation Académique",
+      work: [
+        {
+          role: "Développeuse Full-Stack",
+          company: "CariotecaLabs",
+          period: "Oct. 2024 – Aujourd'hui",
+          highlights: [
+            "Interfaces responsives avec React et Tailwind CSS, réduisant le temps de chargement moyen des pages jusqu'à 30%.",
+            "Intégration d'API REST entre le site et l'application mobile, réduisant les échecs de synchronisation des données.",
+            "Refactorisation de composants réutilisables, réduisant la duplication de code et facilitant la maintenance.",
+          ],
+        },
+        {
+          role: "Apprentie en Informatique",
+          company: "Réseau Sarah d'Hôpitaux de Réadaptation",
+          period: "Nov. 2023 – Nov. 2025",
+          highlights: [
+            "Support technique aux collaborateurs et aux patients sur les systèmes internes et les équipements.",
+            "Maintenance préventive et corrective d'ordinateurs, d'imprimantes et de bornes libre-service.",
+          ],
+        },
+      ],
+      education: [
+        {
+          degree: "Licence en Génie Logiciel",
+          school: "Universidade Católica do Salvador",
+          period: "Août 2025 – en cours",
+          desc: "Axée sur les exigences, la modélisation, l'architecture logicielle, la programmation, les bases de données et les systèmes évolutifs.",
+        },
+        {
+          degree: "Diplôme Technique en Développement de Systèmes",
+          school: "SENAI Dendezeiros",
+          period: "Juil. 2023 – Août 2025",
+          desc: "Programmation, bases de données, API, Git/GitHub et méthodologies agiles appliquées à des projets pratiques de développement web.",
+        },
+      ],
+      learnMore: "En savoir plus",
+      showLess: "Voir moins",
+      certificationsHeading: "Certifications",
+      credentialLabel: "Voir la certification",
+      certifications: [
+        { title: "Google UX Design", issuer: "Coursera", year: "2024", url: "#" },
+        { title: "React Avancé", issuer: "Alura", year: "2023", url: "#" },
+        { title: "Fondamentaux des Bases de Données", issuer: "SENAI", year: "2024", url: "#" },
+      ],
+    },
     mindset: {
       label: "État d'esprit",
       heading: "Ma façon de penser le développement",
@@ -635,9 +785,9 @@ export const translations: Record<Language, Translation> = {
     },
     about: {
       heading: "Donde el diseño encuentra la ingeniería",
-      p1: "Soy Desarrolladora Web y estudiante de Ingeniería de Software, enfocada en construir aplicaciones modernas, bien estructuradas y pensadas para el usuario.",
-      p2: "Trabajo en la intersección entre el diseño y la ingeniería, transformando ideas en soluciones digitales funcionales, elegantes y escalables. Más que hacer interfaces bonitas, me preocupo por la calidad del código, la organización del proyecto y la experiencia real de quienes utilizan el sistema.",
-      p3: "Tengo experiencia en desarrollo full-stack y estoy en constante evolución, profundizando mis conocimientos en arquitectura de software, back-end y buenas prácticas de desarrollo.",
+      p1: "Soy Desarrolladora Web y estudiante de Ingeniería de Software. Al frente de Refakt, desarrollo un ERP corporativo que está en producción, atendiendo el día a día de RRHH y Finanzas de un cliente real.",
+      p2: "Trabajo en la intersección entre el diseño y la ingeniería: del modelo de datos a la interfaz, transformo procesos de negocio en soluciones digitales funcionales, elegantes y escalables, cuidando la calidad del código y la experiencia de quienes usan el sistema todos los días.",
+      p3: "Tengo experiencia en desarrollo full-stack y, en el ERP, enfrento desafíos como arquitectura multi-tenant, control de acceso por roles y reglas de negocio reales. Sigo profundizando en arquitectura de software, back-end y datos.",
       p4: "Cuando no estoy programando, me gusta explorar nuevas tendencias de diseño, estudiar tecnología y experimentar con ideas creativas en proyectos personales.",
       differentials: [
         "Enfoque en desarrollo full-stack",
@@ -770,6 +920,56 @@ export const translations: Record<Language, Translation> = {
             ],
           },
         },
+      ],
+    },
+    journey: {
+      label: "Trayectoria",
+      heading: "Experiencia & Formación",
+      workHeading: "Experiencia Profesional",
+      educationHeading: "Formación Académica",
+      work: [
+        {
+          role: "Desarrolladora Full-Stack",
+          company: "CariotecaLabs",
+          period: "Oct 2024 – Actualidad",
+          highlights: [
+            "Interfaces responsivas con React y Tailwind CSS, reduciendo el tiempo medio de carga de las páginas hasta un 30%.",
+            "Integración de APIs REST entre el sitio y la aplicación móvil, reduciendo fallas de sincronización de datos.",
+            "Refactorización de componentes reutilizables, reduciendo la duplicación de código y facilitando el mantenimiento.",
+          ],
+        },
+        {
+          role: "Aprendiz de Informática",
+          company: "Red Sarah de Hospitales de Rehabilitación",
+          period: "Nov 2023 – Nov 2025",
+          highlights: [
+            "Soporte técnico a colaboradores y pacientes en sistemas internos y equipos.",
+            "Mantenimiento preventivo y correctivo de computadoras, impresoras y tótems de autoservicio.",
+          ],
+        },
+      ],
+      education: [
+        {
+          degree: "Grado en Ingeniería de Software",
+          school: "Universidade Católica do Salvador",
+          period: "Ago 2025 – en curso",
+          desc: "Enfoque en requisitos, modelado, arquitectura de software, programación, bases de datos y sistemas escalables.",
+        },
+        {
+          degree: "Técnico en Desarrollo de Sistemas",
+          school: "SENAI Dendezeiros",
+          period: "Jul 2023 – Ago 2025",
+          desc: "Programación, bases de datos, APIs, Git/GitHub y metodologías ágiles aplicadas en proyectos prácticos de desarrollo web.",
+        },
+      ],
+      learnMore: "Saber más",
+      showLess: "Mostrar menos",
+      certificationsHeading: "Certificaciones",
+      credentialLabel: "Ver credencial",
+      certifications: [
+        { title: "Google UX Design", issuer: "Coursera", year: "2024", url: "#" },
+        { title: "React Avanzado", issuer: "Alura", year: "2023", url: "#" },
+        { title: "Fundamentos de Bases de Datos", issuer: "SENAI", year: "2024", url: "#" },
       ],
     },
     mindset: {
