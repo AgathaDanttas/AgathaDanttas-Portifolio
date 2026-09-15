@@ -12,6 +12,7 @@ import SplashScreen from "../components/home/SplashScreen";
 import ParticleCanvas from "../components/home/ParticleCanvas";
 import CustomCursor from "../components/home/CustomCursor";
 import Experience from "../components/home/Experience";
+import Journey from "../components/home/Journey";
 import Process from "../components/home/Process";
 import StudyingSection from "../components/home/Studying";
 
@@ -47,6 +48,7 @@ export default function Home() {
           <Hero t={t} />
           <About t={t} />
           <Projects t={t} />
+          <Journey t={t} />
           <Process t={t} />
           <Experience t={t} />
           <StudyingSection t={t} />
